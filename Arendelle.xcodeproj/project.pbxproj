@@ -1,0 +1,705 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EC24EBF61A8680E600599CC9 /* PI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBA61A8680E600599CC9 /* PI.swift */; };
+		EC24EBF71A8680E600599CC9 /* PiTryCatch.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBA81A8680E600599CC9 /* PiTryCatch.m */; };
+		EC24EBF91A8680E600599CC9 /* Arendelle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBAB1A8680E600599CC9 /* Arendelle.swift */; };
+		EC24EBFA1A8680E600599CC9 /* ArendelleFileSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBAC1A8680E600599CC9 /* ArendelleFileSystem.swift */; };
+		EC24EBFB1A8680E600599CC9 /* codeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBAD1A8680E600599CC9 /* codeScreen.swift */; };
+		EC24EBFC1A8680E600599CC9 /* ConditonEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBAE1A8680E600599CC9 /* ConditonEvaluator.swift */; };
+		EC24EBFD1A8680E600599CC9 /* CoreInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBAF1A8680E600599CC9 /* CoreInterface.swift */; };
+		EC24EBFE1A8680E600599CC9 /* _DDDecimalFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBB21A8680E600599CC9 /* _DDDecimalFunctions.m */; };
+		EC24EBFF1A8680E600599CC9 /* _DDFunctionEvaluator.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBB41A8680E600599CC9 /* _DDFunctionEvaluator.m */; };
+		EC24EC001A8680E600599CC9 /* _DDFunctionExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBB61A8680E600599CC9 /* _DDFunctionExpression.m */; };
+		EC24EC011A8680E600599CC9 /* _DDFunctionTerm.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBB81A8680E600599CC9 /* _DDFunctionTerm.m */; };
+		EC24EC021A8680E600599CC9 /* _DDGroupTerm.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBBA1A8680E600599CC9 /* _DDGroupTerm.m */; };
+		EC24EC031A8680E600599CC9 /* _DDNumberExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBBC1A8680E600599CC9 /* _DDNumberExpression.m */; };
+		EC24EC041A8680E600599CC9 /* _DDNumberTerm.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBBE1A8680E600599CC9 /* _DDNumberTerm.m */; };
+		EC24EC051A8680E600599CC9 /* _DDOperatorTerm.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBC01A8680E600599CC9 /* _DDOperatorTerm.m */; };
+		EC24EC061A8680E600599CC9 /* _DDParserTerm.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBC21A8680E600599CC9 /* _DDParserTerm.m */; };
+		EC24EC071A8680E600599CC9 /* _DDPrecisionFunctionEvaluator.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBC41A8680E600599CC9 /* _DDPrecisionFunctionEvaluator.m */; };
+		EC24EC081A8680E600599CC9 /* _DDRewriteRule.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBC61A8680E600599CC9 /* _DDRewriteRule.m */; };
+		EC24EC091A8680E600599CC9 /* _DDVariableExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBC81A8680E600599CC9 /* _DDVariableExpression.m */; };
+		EC24EC0A1A8680E600599CC9 /* _DDVariableTerm.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBCA1A8680E600599CC9 /* _DDVariableTerm.m */; };
+		EC24EC0B1A8680E600599CC9 /* DDExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBCC1A8680E600599CC9 /* DDExpression.m */; };
+		EC24EC0C1A8680E600599CC9 /* DDExpressionRewriter.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBCE1A8680E600599CC9 /* DDExpressionRewriter.m */; };
+		EC24EC0D1A8680E600599CC9 /* DDMathEvaluator.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBD11A8680E600599CC9 /* DDMathEvaluator.m */; };
+		EC24EC0E1A8680E600599CC9 /* DDMathOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBD31A8680E600599CC9 /* DDMathOperator.m */; };
+		EC24EC0F1A8680E600599CC9 /* DDMathStringToken.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBD81A8680E600599CC9 /* DDMathStringToken.m */; };
+		EC24EC101A8680E600599CC9 /* DDMathStringTokenizer.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBDA1A8680E600599CC9 /* DDMathStringTokenizer.m */; };
+		EC24EC111A8680E600599CC9 /* DDParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBDC1A8680E600599CC9 /* DDParser.m */; };
+		EC24EC121A8680E600599CC9 /* DDParserTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBDE1A8680E600599CC9 /* DDParserTypes.m */; };
+		EC24EC131A8680E600599CC9 /* DDTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBE01A8680E600599CC9 /* DDTypes.m */; };
+		EC24EC141A8680E600599CC9 /* NSString+DDMathParsing.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBE21A8680E600599CC9 /* NSString+DDMathParsing.m */; };
+		EC24EC151A8680E600599CC9 /* TimeSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBE31A8680E600599CC9 /* TimeSystem.swift */; };
+		EC24EC161A8680E600599CC9 /* Eval.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBE41A8680E600599CC9 /* Eval.swift */; };
+		EC24EC171A8680E600599CC9 /* FunctionEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBE51A8680E600599CC9 /* FunctionEvaluator.swift */; };
+		EC24EC181A8680E600599CC9 /* FunctionSpaceLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBE61A8680E600599CC9 /* FunctionSpaceLexer.swift */; };
+		EC24EC191A8680E600599CC9 /* LoopEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBE71A8680E600599CC9 /* LoopEvaluator.swift */; };
+		EC24EC1B1A8680E600599CC9 /* masterEval.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBE91A8680E600599CC9 /* masterEval.swift */; };
+		EC24EC1C1A8680E600599CC9 /* MathEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBEA1A8680E600599CC9 /* MathEvaluator.swift */; };
+		EC24EC1D1A8680E600599CC9 /* OnePartOpenCloseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBEB1A8680E600599CC9 /* OnePartOpenCloseParser.swift */; };
+		EC24EC1E1A8680E600599CC9 /* OpenCloseLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBEC1A8680E600599CC9 /* OpenCloseLexer.swift */; };
+		EC24EC1F1A8680E600599CC9 /* Replacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBED1A8680E600599CC9 /* Replacer.swift */; };
+		EC24EC201A8680E600599CC9 /* RND.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBEE1A8680E600599CC9 /* RND.swift */; };
+		EC24EC211A8680E600599CC9 /* SpaceEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBEF1A8680E600599CC9 /* SpaceEvaluator.swift */; };
+		EC24EC221A8680E600599CC9 /* spaceOverwriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBF01A8680E600599CC9 /* spaceOverwriter.swift */; };
+		EC4BCBFB1A55D0F6002B340D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4BCBFA1A55D0F6002B340D /* AppDelegate.swift */; };
+		EC4BCBFD1A55D0F6002B340D /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4BCBFC1A55D0F6002B340D /* MasterViewController.swift */; };
+		EC4BCBFF1A55D0F6002B340D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4BCBFE1A55D0F6002B340D /* DetailViewController.swift */; };
+		EC4BCC021A55D0F6002B340D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC4BCC001A55D0F6002B340D /* Main.storyboard */; };
+		EC4BCC041A55D0F6002B340D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC4BCC031A55D0F6002B340D /* Images.xcassets */; };
+		EC4BCC071A55D0F6002B340D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC4BCC051A55D0F6002B340D /* LaunchScreen.xib */; };
+		EC4BCC131A55D0F6002B340D /* ArendelleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4BCC121A55D0F6002B340D /* ArendelleTests.swift */; };
+		EC77EB481A7AC369004D09B8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC77EB471A7AC369004D09B8 /* SettingsViewController.swift */; };
+		ECC6F08B1A55F07F007B701A /* Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC6F08A1A55F07F007B701A /* Files.swift */; };
+		ECD4572F1A65AC9600D738CE /* FilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD4572E1A65AC9600D738CE /* FilesViewController.swift */; };
+		ECEF4DA11A70397C007E1E34 /* ScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF4DA01A70397C007E1E34 /* ScreenViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EC4BCC0D1A55D0F6002B340D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC4BCBED1A55D0F6002B340D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC4BCBF41A55D0F6002B340D;
+			remoteInfo = Arendelle;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EC24EBA61A8680E600599CC9 /* PI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PI.swift; sourceTree = "<group>"; };
+		EC24EBA71A8680E600599CC9 /* PiTryCatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PiTryCatch.h; sourceTree = "<group>"; };
+		EC24EBA81A8680E600599CC9 /* PiTryCatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PiTryCatch.m; sourceTree = "<group>"; };
+		EC24EBAB1A8680E600599CC9 /* Arendelle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arendelle.swift; sourceTree = "<group>"; };
+		EC24EBAC1A8680E600599CC9 /* ArendelleFileSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArendelleFileSystem.swift; sourceTree = "<group>"; };
+		EC24EBAD1A8680E600599CC9 /* codeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = codeScreen.swift; sourceTree = "<group>"; };
+		EC24EBAE1A8680E600599CC9 /* ConditonEvaluator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConditonEvaluator.swift; sourceTree = "<group>"; };
+		EC24EBAF1A8680E600599CC9 /* CoreInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreInterface.swift; sourceTree = "<group>"; };
+		EC24EBB11A8680E600599CC9 /* _DDDecimalFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DDDecimalFunctions.h; sourceTree = "<group>"; };
+		EC24EBB21A8680E600599CC9 /* _DDDecimalFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DDDecimalFunctions.m; sourceTree = "<group>"; };
+		EC24EBB31A8680E600599CC9 /* _DDFunctionEvaluator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DDFunctionEvaluator.h; sourceTree = "<group>"; };
+		EC24EBB41A8680E600599CC9 /* _DDFunctionEvaluator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DDFunctionEvaluator.m; sourceTree = "<group>"; };
+		EC24EBB51A8680E600599CC9 /* _DDFunctionExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DDFunctionExpression.h; sourceTree = "<group>"; };
+		EC24EBB61A8680E600599CC9 /* _DDFunctionExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DDFunctionExpression.m; sourceTree = "<group>"; };
+		EC24EBB71A8680E600599CC9 /* _DDFunctionTerm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DDFunctionTerm.h; sourceTree = "<group>"; };
+		EC24EBB81A8680E600599CC9 /* _DDFunctionTerm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DDFunctionTerm.m; sourceTree = "<group>"; };
+		EC24EBB91A8680E600599CC9 /* _DDGroupTerm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DDGroupTerm.h; sourceTree = "<group>"; };
+		EC24EBBA1A8680E600599CC9 /* _DDGroupTerm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DDGroupTerm.m; sourceTree = "<group>"; };
+		EC24EBBB1A8680E600599CC9 /* _DDNumberExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DDNumberExpression.h; sourceTree = "<group>"; };
+		EC24EBBC1A8680E600599CC9 /* _DDNumberExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DDNumberExpression.m; sourceTree = "<group>"; };
+		EC24EBBD1A8680E600599CC9 /* _DDNumberTerm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DDNumberTerm.h; sourceTree = "<group>"; };
+		EC24EBBE1A8680E600599CC9 /* _DDNumberTerm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DDNumberTerm.m; sourceTree = "<group>"; };
+		EC24EBBF1A8680E600599CC9 /* _DDOperatorTerm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DDOperatorTerm.h; sourceTree = "<group>"; };
+		EC24EBC01A8680E600599CC9 /* _DDOperatorTerm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DDOperatorTerm.m; sourceTree = "<group>"; };
+		EC24EBC11A8680E600599CC9 /* _DDParserTerm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DDParserTerm.h; sourceTree = "<group>"; };
+		EC24EBC21A8680E600599CC9 /* _DDParserTerm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DDParserTerm.m; sourceTree = "<group>"; };
+		EC24EBC31A8680E600599CC9 /* _DDPrecisionFunctionEvaluator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DDPrecisionFunctionEvaluator.h; sourceTree = "<group>"; };
+		EC24EBC41A8680E600599CC9 /* _DDPrecisionFunctionEvaluator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DDPrecisionFunctionEvaluator.m; sourceTree = "<group>"; };
+		EC24EBC51A8680E600599CC9 /* _DDRewriteRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DDRewriteRule.h; sourceTree = "<group>"; };
+		EC24EBC61A8680E600599CC9 /* _DDRewriteRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DDRewriteRule.m; sourceTree = "<group>"; };
+		EC24EBC71A8680E600599CC9 /* _DDVariableExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DDVariableExpression.h; sourceTree = "<group>"; };
+		EC24EBC81A8680E600599CC9 /* _DDVariableExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DDVariableExpression.m; sourceTree = "<group>"; };
+		EC24EBC91A8680E600599CC9 /* _DDVariableTerm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DDVariableTerm.h; sourceTree = "<group>"; };
+		EC24EBCA1A8680E600599CC9 /* _DDVariableTerm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DDVariableTerm.m; sourceTree = "<group>"; };
+		EC24EBCB1A8680E600599CC9 /* DDExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDExpression.h; sourceTree = "<group>"; };
+		EC24EBCC1A8680E600599CC9 /* DDExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDExpression.m; sourceTree = "<group>"; };
+		EC24EBCD1A8680E600599CC9 /* DDExpressionRewriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDExpressionRewriter.h; sourceTree = "<group>"; };
+		EC24EBCE1A8680E600599CC9 /* DDExpressionRewriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDExpressionRewriter.m; sourceTree = "<group>"; };
+		EC24EBCF1A8680E600599CC9 /* DDMathEvaluator+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DDMathEvaluator+Private.h"; sourceTree = "<group>"; };
+		EC24EBD01A8680E600599CC9 /* DDMathEvaluator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMathEvaluator.h; sourceTree = "<group>"; };
+		EC24EBD11A8680E600599CC9 /* DDMathEvaluator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMathEvaluator.m; sourceTree = "<group>"; };
+		EC24EBD21A8680E600599CC9 /* DDMathOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMathOperator.h; sourceTree = "<group>"; };
+		EC24EBD31A8680E600599CC9 /* DDMathOperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMathOperator.m; sourceTree = "<group>"; };
+		EC24EBD41A8680E600599CC9 /* DDMathOperator_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMathOperator_Internal.h; sourceTree = "<group>"; };
+		EC24EBD51A8680E600599CC9 /* DDMathParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMathParser.h; sourceTree = "<group>"; };
+		EC24EBD61A8680E600599CC9 /* DDMathParserMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMathParserMacros.h; sourceTree = "<group>"; };
+		EC24EBD71A8680E600599CC9 /* DDMathStringToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMathStringToken.h; sourceTree = "<group>"; };
+		EC24EBD81A8680E600599CC9 /* DDMathStringToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMathStringToken.m; sourceTree = "<group>"; };
+		EC24EBD91A8680E600599CC9 /* DDMathStringTokenizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMathStringTokenizer.h; sourceTree = "<group>"; };
+		EC24EBDA1A8680E600599CC9 /* DDMathStringTokenizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMathStringTokenizer.m; sourceTree = "<group>"; };
+		EC24EBDB1A8680E600599CC9 /* DDParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDParser.h; sourceTree = "<group>"; };
+		EC24EBDC1A8680E600599CC9 /* DDParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDParser.m; sourceTree = "<group>"; };
+		EC24EBDD1A8680E600599CC9 /* DDParserTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDParserTypes.h; sourceTree = "<group>"; };
+		EC24EBDE1A8680E600599CC9 /* DDParserTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDParserTypes.m; sourceTree = "<group>"; };
+		EC24EBDF1A8680E600599CC9 /* DDTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTypes.h; sourceTree = "<group>"; };
+		EC24EBE01A8680E600599CC9 /* DDTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTypes.m; sourceTree = "<group>"; };
+		EC24EBE11A8680E600599CC9 /* NSString+DDMathParsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DDMathParsing.h"; sourceTree = "<group>"; };
+		EC24EBE21A8680E600599CC9 /* NSString+DDMathParsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DDMathParsing.m"; sourceTree = "<group>"; };
+		EC24EBE31A8680E600599CC9 /* TimeSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSystem.swift; sourceTree = "<group>"; };
+		EC24EBE41A8680E600599CC9 /* Eval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Eval.swift; sourceTree = "<group>"; };
+		EC24EBE51A8680E600599CC9 /* FunctionEvaluator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionEvaluator.swift; sourceTree = "<group>"; };
+		EC24EBE61A8680E600599CC9 /* FunctionSpaceLexer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionSpaceLexer.swift; sourceTree = "<group>"; };
+		EC24EBE71A8680E600599CC9 /* LoopEvaluator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoopEvaluator.swift; sourceTree = "<group>"; };
+		EC24EBE91A8680E600599CC9 /* masterEval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = masterEval.swift; sourceTree = "<group>"; };
+		EC24EBEA1A8680E600599CC9 /* MathEvaluator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathEvaluator.swift; sourceTree = "<group>"; };
+		EC24EBEB1A8680E600599CC9 /* OnePartOpenCloseParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnePartOpenCloseParser.swift; sourceTree = "<group>"; };
+		EC24EBEC1A8680E600599CC9 /* OpenCloseLexer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenCloseLexer.swift; sourceTree = "<group>"; };
+		EC24EBED1A8680E600599CC9 /* Replacer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Replacer.swift; sourceTree = "<group>"; };
+		EC24EBEE1A8680E600599CC9 /* RND.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RND.swift; sourceTree = "<group>"; };
+		EC24EBEF1A8680E600599CC9 /* SpaceEvaluator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceEvaluator.swift; sourceTree = "<group>"; };
+		EC24EBF01A8680E600599CC9 /* spaceOverwriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = spaceOverwriter.swift; sourceTree = "<group>"; };
+		EC24EBF11A8680E600599CC9 /* Swifty-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Swifty-Bridging-Header.h"; sourceTree = "<group>"; };
+		EC4BCBF51A55D0F6002B340D /* Arendelle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arendelle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC4BCBF91A55D0F6002B340D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC4BCBFA1A55D0F6002B340D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EC4BCBFC1A55D0F6002B340D /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		EC4BCBFE1A55D0F6002B340D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		EC4BCC011A55D0F6002B340D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EC4BCC031A55D0F6002B340D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EC4BCC061A55D0F6002B340D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		EC4BCC0C1A55D0F6002B340D /* ArendelleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArendelleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC4BCC111A55D0F6002B340D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC4BCC121A55D0F6002B340D /* ArendelleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArendelleTests.swift; sourceTree = "<group>"; };
+		EC77EB471A7AC369004D09B8 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		ECC6F08A1A55F07F007B701A /* Files.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Files.swift; sourceTree = "<group>"; };
+		ECD4572E1A65AC9600D738CE /* FilesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilesViewController.swift; sourceTree = "<group>"; };
+		ECEF4DA01A70397C007E1E34 /* ScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EC4BCBF21A55D0F6002B340D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC4BCC091A55D0F6002B340D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EC24EBA41A8680E600599CC9 /* swifty */ = {
+			isa = PBXGroup;
+			children = (
+				EC24EBA61A8680E600599CC9 /* PI.swift */,
+				EC24EBA71A8680E600599CC9 /* PiTryCatch.h */,
+				EC24EBA81A8680E600599CC9 /* PiTryCatch.m */,
+				EC24EBAA1A8680E600599CC9 /* Swifty */,
+				EC24EBF11A8680E600599CC9 /* Swifty-Bridging-Header.h */,
+			);
+			path = swifty;
+			sourceTree = "<group>";
+		};
+		EC24EBAA1A8680E600599CC9 /* Swifty */ = {
+			isa = PBXGroup;
+			children = (
+				EC24EBAB1A8680E600599CC9 /* Arendelle.swift */,
+				EC24EBAC1A8680E600599CC9 /* ArendelleFileSystem.swift */,
+				EC24EBAD1A8680E600599CC9 /* codeScreen.swift */,
+				EC24EBAE1A8680E600599CC9 /* ConditonEvaluator.swift */,
+				EC24EBAF1A8680E600599CC9 /* CoreInterface.swift */,
+				EC24EBB01A8680E600599CC9 /* DDMathParser */,
+				EC24EBE41A8680E600599CC9 /* Eval.swift */,
+				EC24EBE51A8680E600599CC9 /* FunctionEvaluator.swift */,
+				EC24EBE61A8680E600599CC9 /* FunctionSpaceLexer.swift */,
+				EC24EBE71A8680E600599CC9 /* LoopEvaluator.swift */,
+				EC24EBE91A8680E600599CC9 /* masterEval.swift */,
+				EC24EBEA1A8680E600599CC9 /* MathEvaluator.swift */,
+				EC24EBEB1A8680E600599CC9 /* OnePartOpenCloseParser.swift */,
+				EC24EBEC1A8680E600599CC9 /* OpenCloseLexer.swift */,
+				EC24EBED1A8680E600599CC9 /* Replacer.swift */,
+				EC24EBEE1A8680E600599CC9 /* RND.swift */,
+				EC24EBEF1A8680E600599CC9 /* SpaceEvaluator.swift */,
+				EC24EBF01A8680E600599CC9 /* spaceOverwriter.swift */,
+			);
+			path = Swifty;
+			sourceTree = "<group>";
+		};
+		EC24EBB01A8680E600599CC9 /* DDMathParser */ = {
+			isa = PBXGroup;
+			children = (
+				EC24EBB11A8680E600599CC9 /* _DDDecimalFunctions.h */,
+				EC24EBB21A8680E600599CC9 /* _DDDecimalFunctions.m */,
+				EC24EBB31A8680E600599CC9 /* _DDFunctionEvaluator.h */,
+				EC24EBB41A8680E600599CC9 /* _DDFunctionEvaluator.m */,
+				EC24EBB51A8680E600599CC9 /* _DDFunctionExpression.h */,
+				EC24EBB61A8680E600599CC9 /* _DDFunctionExpression.m */,
+				EC24EBB71A8680E600599CC9 /* _DDFunctionTerm.h */,
+				EC24EBB81A8680E600599CC9 /* _DDFunctionTerm.m */,
+				EC24EBB91A8680E600599CC9 /* _DDGroupTerm.h */,
+				EC24EBBA1A8680E600599CC9 /* _DDGroupTerm.m */,
+				EC24EBBB1A8680E600599CC9 /* _DDNumberExpression.h */,
+				EC24EBBC1A8680E600599CC9 /* _DDNumberExpression.m */,
+				EC24EBBD1A8680E600599CC9 /* _DDNumberTerm.h */,
+				EC24EBBE1A8680E600599CC9 /* _DDNumberTerm.m */,
+				EC24EBBF1A8680E600599CC9 /* _DDOperatorTerm.h */,
+				EC24EBC01A8680E600599CC9 /* _DDOperatorTerm.m */,
+				EC24EBC11A8680E600599CC9 /* _DDParserTerm.h */,
+				EC24EBC21A8680E600599CC9 /* _DDParserTerm.m */,
+				EC24EBC31A8680E600599CC9 /* _DDPrecisionFunctionEvaluator.h */,
+				EC24EBC41A8680E600599CC9 /* _DDPrecisionFunctionEvaluator.m */,
+				EC24EBC51A8680E600599CC9 /* _DDRewriteRule.h */,
+				EC24EBC61A8680E600599CC9 /* _DDRewriteRule.m */,
+				EC24EBC71A8680E600599CC9 /* _DDVariableExpression.h */,
+				EC24EBC81A8680E600599CC9 /* _DDVariableExpression.m */,
+				EC24EBC91A8680E600599CC9 /* _DDVariableTerm.h */,
+				EC24EBCA1A8680E600599CC9 /* _DDVariableTerm.m */,
+				EC24EBCB1A8680E600599CC9 /* DDExpression.h */,
+				EC24EBCC1A8680E600599CC9 /* DDExpression.m */,
+				EC24EBCD1A8680E600599CC9 /* DDExpressionRewriter.h */,
+				EC24EBCE1A8680E600599CC9 /* DDExpressionRewriter.m */,
+				EC24EBCF1A8680E600599CC9 /* DDMathEvaluator+Private.h */,
+				EC24EBD01A8680E600599CC9 /* DDMathEvaluator.h */,
+				EC24EBD11A8680E600599CC9 /* DDMathEvaluator.m */,
+				EC24EBD21A8680E600599CC9 /* DDMathOperator.h */,
+				EC24EBD31A8680E600599CC9 /* DDMathOperator.m */,
+				EC24EBD41A8680E600599CC9 /* DDMathOperator_Internal.h */,
+				EC24EBD51A8680E600599CC9 /* DDMathParser.h */,
+				EC24EBD61A8680E600599CC9 /* DDMathParserMacros.h */,
+				EC24EBD71A8680E600599CC9 /* DDMathStringToken.h */,
+				EC24EBD81A8680E600599CC9 /* DDMathStringToken.m */,
+				EC24EBD91A8680E600599CC9 /* DDMathStringTokenizer.h */,
+				EC24EBDA1A8680E600599CC9 /* DDMathStringTokenizer.m */,
+				EC24EBDB1A8680E600599CC9 /* DDParser.h */,
+				EC24EBDC1A8680E600599CC9 /* DDParser.m */,
+				EC24EBDD1A8680E600599CC9 /* DDParserTypes.h */,
+				EC24EBDE1A8680E600599CC9 /* DDParserTypes.m */,
+				EC24EBDF1A8680E600599CC9 /* DDTypes.h */,
+				EC24EBE01A8680E600599CC9 /* DDTypes.m */,
+				EC24EBE11A8680E600599CC9 /* NSString+DDMathParsing.h */,
+				EC24EBE21A8680E600599CC9 /* NSString+DDMathParsing.m */,
+				EC24EBE31A8680E600599CC9 /* TimeSystem.swift */,
+			);
+			path = DDMathParser;
+			sourceTree = "<group>";
+		};
+		EC4BCBEC1A55D0F6002B340D = {
+			isa = PBXGroup;
+			children = (
+				EC4BCBF71A55D0F6002B340D /* Arendelle */,
+				EC4BCC0F1A55D0F6002B340D /* ArendelleTests */,
+				EC4BCBF61A55D0F6002B340D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EC4BCBF61A55D0F6002B340D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC4BCBF51A55D0F6002B340D /* Arendelle.app */,
+				EC4BCC0C1A55D0F6002B340D /* ArendelleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC4BCBF71A55D0F6002B340D /* Arendelle */ = {
+			isa = PBXGroup;
+			children = (
+				EC24EBA41A8680E600599CC9 /* swifty */,
+				EC4BCBFA1A55D0F6002B340D /* AppDelegate.swift */,
+				EC4BCBFE1A55D0F6002B340D /* DetailViewController.swift */,
+				ECD4572E1A65AC9600D738CE /* FilesViewController.swift */,
+				EC4BCBFC1A55D0F6002B340D /* MasterViewController.swift */,
+				ECEF4DA01A70397C007E1E34 /* ScreenViewController.swift */,
+				EC77EB471A7AC369004D09B8 /* SettingsViewController.swift */,
+				ECC6F08A1A55F07F007B701A /* Files.swift */,
+				EC4BCC001A55D0F6002B340D /* Main.storyboard */,
+				EC4BCC031A55D0F6002B340D /* Images.xcassets */,
+				EC4BCC051A55D0F6002B340D /* LaunchScreen.xib */,
+				EC4BCBF81A55D0F6002B340D /* Supporting Files */,
+			);
+			path = Arendelle;
+			sourceTree = "<group>";
+		};
+		EC4BCBF81A55D0F6002B340D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC4BCBF91A55D0F6002B340D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EC4BCC0F1A55D0F6002B340D /* ArendelleTests */ = {
+			isa = PBXGroup;
+			children = (
+				EC4BCC121A55D0F6002B340D /* ArendelleTests.swift */,
+				EC4BCC101A55D0F6002B340D /* Supporting Files */,
+			);
+			path = ArendelleTests;
+			sourceTree = "<group>";
+		};
+		EC4BCC101A55D0F6002B340D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC4BCC111A55D0F6002B340D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EC4BCBF41A55D0F6002B340D /* Arendelle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC4BCC161A55D0F6002B340D /* Build configuration list for PBXNativeTarget "Arendelle" */;
+			buildPhases = (
+				EC4BCBF11A55D0F6002B340D /* Sources */,
+				EC4BCBF21A55D0F6002B340D /* Frameworks */,
+				EC4BCBF31A55D0F6002B340D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Arendelle;
+			productName = Arendelle;
+			productReference = EC4BCBF51A55D0F6002B340D /* Arendelle.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EC4BCC0B1A55D0F6002B340D /* ArendelleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC4BCC191A55D0F6002B340D /* Build configuration list for PBXNativeTarget "ArendelleTests" */;
+			buildPhases = (
+				EC4BCC081A55D0F6002B340D /* Sources */,
+				EC4BCC091A55D0F6002B340D /* Frameworks */,
+				EC4BCC0A1A55D0F6002B340D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC4BCC0E1A55D0F6002B340D /* PBXTargetDependency */,
+			);
+			name = ArendelleTests;
+			productName = ArendelleTests;
+			productReference = EC4BCC0C1A55D0F6002B340D /* ArendelleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EC4BCBED1A55D0F6002B340D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Arendelle Project";
+				TargetAttributes = {
+					EC4BCBF41A55D0F6002B340D = {
+						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 3KPRYM4Q67;
+					};
+					EC4BCC0B1A55D0F6002B340D = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = EC4BCBF41A55D0F6002B340D;
+					};
+				};
+			};
+			buildConfigurationList = EC4BCBF01A55D0F6002B340D /* Build configuration list for PBXProject "Arendelle" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EC4BCBEC1A55D0F6002B340D;
+			productRefGroup = EC4BCBF61A55D0F6002B340D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EC4BCBF41A55D0F6002B340D /* Arendelle */,
+				EC4BCC0B1A55D0F6002B340D /* ArendelleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EC4BCBF31A55D0F6002B340D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC4BCC021A55D0F6002B340D /* Main.storyboard in Resources */,
+				EC4BCC071A55D0F6002B340D /* LaunchScreen.xib in Resources */,
+				EC4BCC041A55D0F6002B340D /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC4BCC0A1A55D0F6002B340D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EC4BCBF11A55D0F6002B340D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECC6F08B1A55F07F007B701A /* Files.swift in Sources */,
+				EC24EC0B1A8680E600599CC9 /* DDExpression.m in Sources */,
+				EC24EC011A8680E600599CC9 /* _DDFunctionTerm.m in Sources */,
+				EC24EC171A8680E600599CC9 /* FunctionEvaluator.swift in Sources */,
+				EC4BCBFF1A55D0F6002B340D /* DetailViewController.swift in Sources */,
+				EC24EC1D1A8680E600599CC9 /* OnePartOpenCloseParser.swift in Sources */,
+				EC24EC211A8680E600599CC9 /* SpaceEvaluator.swift in Sources */,
+				EC24EBF61A8680E600599CC9 /* PI.swift in Sources */,
+				ECEF4DA11A70397C007E1E34 /* ScreenViewController.swift in Sources */,
+				EC24EC141A8680E600599CC9 /* NSString+DDMathParsing.m in Sources */,
+				EC4BCBFD1A55D0F6002B340D /* MasterViewController.swift in Sources */,
+				EC24EC021A8680E600599CC9 /* _DDGroupTerm.m in Sources */,
+				EC24EC051A8680E600599CC9 /* _DDOperatorTerm.m in Sources */,
+				EC24EBFF1A8680E600599CC9 /* _DDFunctionEvaluator.m in Sources */,
+				EC24EC031A8680E600599CC9 /* _DDNumberExpression.m in Sources */,
+				EC77EB481A7AC369004D09B8 /* SettingsViewController.swift in Sources */,
+				EC24EBFA1A8680E600599CC9 /* ArendelleFileSystem.swift in Sources */,
+				EC24EC131A8680E600599CC9 /* DDTypes.m in Sources */,
+				EC24EBF91A8680E600599CC9 /* Arendelle.swift in Sources */,
+				EC24EC111A8680E600599CC9 /* DDParser.m in Sources */,
+				EC24EC0C1A8680E600599CC9 /* DDExpressionRewriter.m in Sources */,
+				EC24EC081A8680E600599CC9 /* _DDRewriteRule.m in Sources */,
+				EC24EC1B1A8680E600599CC9 /* masterEval.swift in Sources */,
+				EC24EC201A8680E600599CC9 /* RND.swift in Sources */,
+				EC24EC0A1A8680E600599CC9 /* _DDVariableTerm.m in Sources */,
+				EC24EC101A8680E600599CC9 /* DDMathStringTokenizer.m in Sources */,
+				EC24EC1F1A8680E600599CC9 /* Replacer.swift in Sources */,
+				EC24EC0D1A8680E600599CC9 /* DDMathEvaluator.m in Sources */,
+				EC24EC0F1A8680E600599CC9 /* DDMathStringToken.m in Sources */,
+				EC24EC181A8680E600599CC9 /* FunctionSpaceLexer.swift in Sources */,
+				EC24EC151A8680E600599CC9 /* TimeSystem.swift in Sources */,
+				EC24EC1C1A8680E600599CC9 /* MathEvaluator.swift in Sources */,
+				EC24EC061A8680E600599CC9 /* _DDParserTerm.m in Sources */,
+				EC24EC091A8680E600599CC9 /* _DDVariableExpression.m in Sources */,
+				EC24EBFD1A8680E600599CC9 /* CoreInterface.swift in Sources */,
+				EC24EBFB1A8680E600599CC9 /* codeScreen.swift in Sources */,
+				EC24EC001A8680E600599CC9 /* _DDFunctionExpression.m in Sources */,
+				EC24EC1E1A8680E600599CC9 /* OpenCloseLexer.swift in Sources */,
+				EC24EC041A8680E600599CC9 /* _DDNumberTerm.m in Sources */,
+				EC24EC121A8680E600599CC9 /* DDParserTypes.m in Sources */,
+				EC24EBF71A8680E600599CC9 /* PiTryCatch.m in Sources */,
+				ECD4572F1A65AC9600D738CE /* FilesViewController.swift in Sources */,
+				EC24EC071A8680E600599CC9 /* _DDPrecisionFunctionEvaluator.m in Sources */,
+				EC4BCBFB1A55D0F6002B340D /* AppDelegate.swift in Sources */,
+				EC24EBFE1A8680E600599CC9 /* _DDDecimalFunctions.m in Sources */,
+				EC24EC161A8680E600599CC9 /* Eval.swift in Sources */,
+				EC24EC191A8680E600599CC9 /* LoopEvaluator.swift in Sources */,
+				EC24EC0E1A8680E600599CC9 /* DDMathOperator.m in Sources */,
+				EC24EBFC1A8680E600599CC9 /* ConditonEvaluator.swift in Sources */,
+				EC24EC221A8680E600599CC9 /* spaceOverwriter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC4BCC081A55D0F6002B340D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC4BCC131A55D0F6002B340D /* ArendelleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EC4BCC0E1A55D0F6002B340D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC4BCBF41A55D0F6002B340D /* Arendelle */;
+			targetProxy = EC4BCC0D1A55D0F6002B340D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EC4BCC001A55D0F6002B340D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC4BCC011A55D0F6002B340D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EC4BCC051A55D0F6002B340D /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC4BCC061A55D0F6002B340D /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EC4BCC141A55D0F6002B340D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EC4BCC151A55D0F6002B340D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EC4BCC171A55D0F6002B340D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Arendelle/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Arendelle/swifty/Swifty-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EC4BCC181A55D0F6002B340D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Arendelle/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Arendelle/swifty/Swifty-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EC4BCC1A1A55D0F6002B340D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ArendelleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Arendelle.app/Arendelle";
+			};
+			name = Debug;
+		};
+		EC4BCC1B1A55D0F6002B340D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ArendelleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Arendelle.app/Arendelle";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EC4BCBF01A55D0F6002B340D /* Build configuration list for PBXProject "Arendelle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC4BCC141A55D0F6002B340D /* Debug */,
+				EC4BCC151A55D0F6002B340D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC4BCC161A55D0F6002B340D /* Build configuration list for PBXNativeTarget "Arendelle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC4BCC171A55D0F6002B340D /* Debug */,
+				EC4BCC181A55D0F6002B340D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC4BCC191A55D0F6002B340D /* Build configuration list for PBXNativeTarget "ArendelleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC4BCC1A1A55D0F6002B340D /* Debug */,
+				EC4BCC1B1A55D0F6002B340D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EC4BCBED1A55D0F6002B340D /* Project object */;
+}
