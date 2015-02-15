@@ -31,7 +31,7 @@ class FilesViewController: UITableViewController {
         
         // TODO: migrating from Android
         
-        // fill file list
+        // get files
         let fileManager = NSFileManager.defaultManager()
         projectFolder = Files.getDocsDir().stringByAppendingPathComponent(projectName)
         configFile = projectFolder.stringByAppendingPathComponent("project.config")
@@ -69,7 +69,6 @@ class FilesViewController: UITableViewController {
                 let file = projectFolder.stringByAppendingPathComponent(fileList[indexPath.row].stringByReplacingOccurrencesOfString(".", withString: "/", options: .LiteralSearch, range: nil) + ".arendelle")
                 let controller = (segue.destinationViewController as UINavigationController).topViewController as DetailViewController
                 controller.file = file
-                controller.mainFunction = mainFunction
                 controller.projectFolder = projectFolder
                 controller.configFile = configFile
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
@@ -85,7 +84,6 @@ class FilesViewController: UITableViewController {
             } else {
                 let controller = (segue.destinationViewController as UINavigationController).topViewController as DetailViewController
                 controller.file = currentFunction
-                controller.mainFunction = mainFunction
                 controller.projectFolder = projectFolder
                 controller.configFile = configFile
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
@@ -94,8 +92,11 @@ class FilesViewController: UITableViewController {
             
         } else if segue.identifier == "showSettings" {
             
-            let controller = (segue.destinationViewController as UINavigationController).topViewController as SettingsViewController
-            controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
+            //let controller = (segue.destinationViewController as UINavigationController).topViewController as SettingsViewController
+            let controller = segue.destinationViewController as SettingsViewController
+            controller.projectFolder = projectFolder
+            controller.configFile = configFile
+            //controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
             controller.navigationItem.leftItemsSupplementBackButton = true
             
         }

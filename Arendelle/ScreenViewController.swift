@@ -18,7 +18,7 @@ class ScreenViewController: UIViewController {
     var cellWidth: Int = 0
     var cellHeight: Int = 0
     var showErrorsDialog = true
-    var colorPalette: [Int] = []
+    var colorPalette: [UIColor] = []
     var evaluating = false
     
     // Arendelles screen
@@ -33,8 +33,6 @@ class ScreenViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        // TODO: get color palette
-        
         // add bar buttons
         var buttonStop = UIBarButtonItem(barButtonSystemItem: .Stop, target: self, action: "actionStop:")
         var buttonShare = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: "actionShare:")
@@ -42,6 +40,27 @@ class ScreenViewController: UIViewController {
         
         // set title
         self.title = projectFolder.lastPathComponent
+        
+        // helper function: creates an UIColor from a hex string
+        func colorWithHexString(hex:String) -> UIColor {
+            var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).uppercaseString
+            var rString = cString.substringToIndex(2)
+            var gString = cString.substringFromIndex(2).substringToIndex(2)
+            var bString = cString.substringFromIndex(4).substringToIndex(2)
+            var r:CUnsignedInt = 0, g:CUnsignedInt = 0, b:CUnsignedInt = 0;
+            NSScanner(string: rString).scanHexInt(&r)
+            NSScanner(string: gString).scanHexInt(&g)
+            NSScanner(string: bString).scanHexInt(&b)
+            return UIColor(red: CGFloat(r) / 255.0, green: CGFloat(g) / 255.0, blue: CGFloat(b) / 255.0, alpha: CGFloat(1))
+        }
+        
+        // get color palette
+        let properties = Files.parseConfigFile(configFile)
+        colorPalette.append(colorWithHexString(properties["colorBackground"]!))
+        colorPalette.append(colorWithHexString(properties["colorFirst"]!))
+        colorPalette.append(colorWithHexString(properties["colorSecond"]!))
+        colorPalette.append(colorWithHexString(properties["colorThird"]!))
+        colorPalette.append(colorWithHexString(properties["colorFourth"]!))
         
     }
     
@@ -184,8 +203,6 @@ class ScreenViewController: UIViewController {
         
     }
     
-    // TODO: refresh button
-    
     // draws result
     func draw() -> UIImage {
         
@@ -198,19 +215,19 @@ class ScreenViewController: UIViewController {
                 switch screen!.screen[x,y] {
                     
                 case 1:
-                    CGContextSetFillColorWithColor(context, UIColor.whiteColor().CGColor)
+                    CGContextSetFillColorWithColor(context, colorPalette[1].CGColor)
                     
                 case 2:
-                    CGContextSetFillColorWithColor(context, UIColor.lightGrayColor().CGColor)
+                    CGContextSetFillColorWithColor(context, colorPalette[2].CGColor)
                     
                 case 3:
-                    CGContextSetFillColorWithColor(context, UIColor.grayColor().CGColor)
+                    CGContextSetFillColorWithColor(context, colorPalette[3].CGColor)
                     
                 case 4:
-                    CGContextSetFillColorWithColor(context, UIColor.darkGrayColor().CGColor)
+                    CGContextSetFillColorWithColor(context, colorPalette[4].CGColor)
                     
                 default:
-                    CGContextSetFillColorWithColor(context, UIColor.blackColor().CGColor)
+                    CGContextSetFillColorWithColor(context, colorPalette[0].CGColor)
                     
                 }
                 

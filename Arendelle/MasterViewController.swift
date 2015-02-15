@@ -160,13 +160,12 @@ class MasterViewController: UITableViewController {
         var properties = [String: String]()
         properties["mainFunction"] = mainFunctionName + ".arendelle"
         properties["currentFunction"] = properties["mainFunction"]
-        // TODO: update code
         properties["colorPalette"] = "0"
-        properties["colorBackground"] = "0"
-        properties["colorFirst"] = "0"
-        properties["colorSecond"] = "0"
-        properties["colorThird"] = "0"
-        properties["colorFourth"] = "0"
+        properties["colorBackground"] = "000000"
+        properties["colorFirst"] = "FFFFFF"
+        properties["colorSecond"] = "CECECE"
+        properties["colorThird"] = "8C8A8C"
+        properties["colorFourth"] = "424542"
         Files.createConfigFile(projectFolder.stringByAppendingPathComponent("project.config"), properties: properties)
         
         // create main function

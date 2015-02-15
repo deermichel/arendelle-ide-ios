@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H1p-Uh-vWS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Project-->
@@ -97,28 +98,12 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Files" id="ELo-dL-tbG"/>
                     <connections>
-                        <segue destination="dkZ-Jm-yWh" kind="showDetail" identifier="showSettings" id="U13-SN-Mzs"/>
+                        <segue destination="orA-XP-VWm" kind="show" identifier="showSettings" id="cxI-bm-HXm"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OFv-gh-o6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1452" y="-630"/>
-        </scene>
-        <!--Project Settings-->
-        <scene sceneID="15f-YT-dGp">
-            <objects>
-                <navigationController title="Project Settings" id="dkZ-Jm-yWh" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="x27-KM-QI3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="orA-XP-VWm" kind="relationship" relationship="rootViewController" id="ihr-TW-bA8"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GhR-Ul-n8G" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2204" y="-630"/>
         </scene>
         <!--Project Settings-->
         <scene sceneID="QD8-73-qw2">
@@ -131,13 +116,49 @@
                     <view key="view" contentMode="scaleToFill" id="5Iw-23-vN6">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change main function" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vWR-cN-0BK">
+                                <rect key="frame" x="16" y="72" width="169" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UJK-R1-bWB" userLabel="Main Function Picker">
+                                <rect key="frame" x="16" y="93" width="568" height="162"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change color palette" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ke1-zT-GU0">
+                                <rect key="frame" x="16" y="263" width="161" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5CT-Ma-sdm" userLabel="Color Palette Picker">
+                                <rect key="frame" x="16" y="284" width="568" height="162"/>
+                            </pickerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="5CT-Ma-sdm" secondAttribute="trailing" id="3Ig-dM-RFi"/>
+                            <constraint firstItem="vWR-cN-0BK" firstAttribute="top" secondItem="lq5-s1-xTU" secondAttribute="bottom" constant="8" id="7yc-3s-pTz"/>
+                            <constraint firstItem="UJK-R1-bWB" firstAttribute="top" secondItem="vWR-cN-0BK" secondAttribute="bottom" id="I2l-hR-uZ8"/>
+                            <constraint firstItem="5CT-Ma-sdm" firstAttribute="top" secondItem="Ke1-zT-GU0" secondAttribute="bottom" id="MUH-Eo-iFs"/>
+                            <constraint firstItem="Ke1-zT-GU0" firstAttribute="top" secondItem="UJK-R1-bWB" secondAttribute="bottom" constant="8" id="SlQ-9T-DHG"/>
+                            <constraint firstItem="UJK-R1-bWB" firstAttribute="leading" secondItem="5Iw-23-vN6" secondAttribute="leadingMargin" id="X4N-Hy-Cep"/>
+                            <constraint firstItem="vWR-cN-0BK" firstAttribute="leading" secondItem="5Iw-23-vN6" secondAttribute="leadingMargin" id="XaL-QU-JHX"/>
+                            <constraint firstItem="Ke1-zT-GU0" firstAttribute="leading" secondItem="5Iw-23-vN6" secondAttribute="leadingMargin" id="kCE-sP-Cqz"/>
+                            <constraint firstItem="5CT-Ma-sdm" firstAttribute="leading" secondItem="5Iw-23-vN6" secondAttribute="leadingMargin" id="uQd-n9-rsN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UJK-R1-bWB" secondAttribute="trailing" id="wcA-wD-MYz"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Project Settings" id="bff-sL-epM"/>
+                    <connections>
+                        <outlet property="colorPalettePicker" destination="5CT-Ma-sdm" id="x0o-BS-rYW"/>
+                        <outlet property="mainFunctionPicker" destination="UJK-R1-bWB" id="z2e-Bj-Dua"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dxd-8Y-Adn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2950" y="-630"/>
+            <point key="canvasLocation" x="2180" y="-630"/>
         </scene>
         <!--Screen-->
         <scene sceneID="Qzu-jX-RhO">

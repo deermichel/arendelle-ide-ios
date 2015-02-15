@@ -10,7 +10,6 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    var mainFunction: String = ""
     var configFile: String = ""
     var projectFolder: String = ""
     var file: String = ""
@@ -154,6 +153,7 @@ class DetailViewController: UIViewController {
                 Files.write(file, text: textCode.text)
                 
                 let controller = segue.destinationViewController as ScreenViewController
+                let mainFunction = projectFolder.stringByAppendingPathComponent(Files.parseConfigFile(configFile)["mainFunction"]!)
                 controller.code = Files.read(mainFunction)
                 controller.configFile = configFile
                 controller.projectFolder = projectFolder
