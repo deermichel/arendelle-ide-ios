@@ -60,6 +60,7 @@
 		EC77EB481A7AC369004D09B8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC77EB471A7AC369004D09B8 /* SettingsViewController.swift */; };
 		ECC6F08B1A55F07F007B701A /* Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC6F08A1A55F07F007B701A /* Files.swift */; };
 		ECD4572F1A65AC9600D738CE /* FilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD4572E1A65AC9600D738CE /* FilesViewController.swift */; };
+		ECD619321A97DBDA00BA3E6B /* ErrorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD619311A97DBDA00BA3E6B /* ErrorsViewController.swift */; };
 		ECEF4DA11A70397C007E1E34 /* ScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF4DA01A70397C007E1E34 /* ScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -160,6 +161,7 @@
 		EC77EB471A7AC369004D09B8 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		ECC6F08A1A55F07F007B701A /* Files.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Files.swift; sourceTree = "<group>"; };
 		ECD4572E1A65AC9600D738CE /* FilesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilesViewController.swift; sourceTree = "<group>"; };
+		ECD619311A97DBDA00BA3E6B /* ErrorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorsViewController.swift; sourceTree = "<group>"; };
 		ECEF4DA01A70397C007E1E34 /* ScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -300,6 +302,7 @@
 				EC24EBA41A8680E600599CC9 /* swifty */,
 				EC4BCBFA1A55D0F6002B340D /* AppDelegate.swift */,
 				EC4BCBFE1A55D0F6002B340D /* DetailViewController.swift */,
+				ECD619311A97DBDA00BA3E6B /* ErrorsViewController.swift */,
 				ECD4572E1A65AC9600D738CE /* FilesViewController.swift */,
 				EC4BCBFC1A55D0F6002B340D /* MasterViewController.swift */,
 				ECEF4DA01A70397C007E1E34 /* ScreenViewController.swift */,
@@ -462,6 +465,7 @@
 				EC24EC0C1A8680E600599CC9 /* DDExpressionRewriter.m in Sources */,
 				EC24EC081A8680E600599CC9 /* _DDRewriteRule.m in Sources */,
 				EC24EC1B1A8680E600599CC9 /* masterEval.swift in Sources */,
+				ECD619321A97DBDA00BA3E6B /* ErrorsViewController.swift in Sources */,
 				EC24EC201A8680E600599CC9 /* RND.swift in Sources */,
 				EC24EC0A1A8680E600599CC9 /* _DDVariableTerm.m in Sources */,
 				EC24EC101A8680E600599CC9 /* DDMathStringTokenizer.m in Sources */,

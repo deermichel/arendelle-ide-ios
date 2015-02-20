@@ -43,7 +43,7 @@ class ScreenViewController: UIViewController {
         
         // helper function: creates an UIColor from a hex string
         func colorWithHexString(hex:String) -> UIColor {
-            var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).uppercaseString
+            var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).uppercaseString.substringFromIndex(1)
             var rString = cString.substringToIndex(2)
             var gString = cString.substringFromIndex(2).substringToIndex(2)
             var bString = cString.substringFromIndex(4).substringToIndex(2)
@@ -92,6 +92,7 @@ class ScreenViewController: UIViewController {
         // evaluate
         evaluating = true
         screen = codeScreen(xsize: gridWidth, ysize: gridHeight)
+        screen!.mainPath = projectFolder
         screen!.title = projectFolder.lastPathComponent
         
         // eval thread
@@ -110,7 +111,10 @@ class ScreenViewController: UIViewController {
                 // chronometer
                 self.textChronometer.text = "\(elapsedTime * 1000) ms"
                 
-                // TODO: get errors via screen.errors
+                // show errors
+                if self.screen!.errors.count > 0 {
+                    self.performSegueWithIdentifier("showErrors", sender: self)
+                }
                 
                 // switch to reeval button
                 self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Refresh, target: self, action: "actionRefresh:")
@@ -256,6 +260,17 @@ class ScreenViewController: UIViewController {
         let activity = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
         activity.popoverPresentationController?.barButtonItem = sender as UIBarButtonItem
         self.presentViewController(activity, animated: true, completion: nil)
+        
+    }
+    
+    // MARK: - Segues
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "showErrors" {
+                let controller = segue.destinationViewController as ErrorsViewController
+                controller.errors = screen!.errors
+        }
         
     }
     

@@ -68,43 +68,43 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
             
             // Arendelle Classic
         case 0:
-            properties["colorBackground"] = "000000"
-            properties["colorFirst"] = "FFFFFF"
-            properties["colorSecond"] = "CECECE"
-            properties["colorThird"] = "8C8A8C"
-            properties["colorFourth"] = "424542"
+            properties["colorBackground"] = "#000000"
+            properties["colorFirst"] = "#FFFFFF"
+            properties["colorSecond"] = "#CECECE"
+            properties["colorThird"] = "#8C8A8C"
+            properties["colorFourth"] = "#424542"
             
             // Sparkling Blue
         case 1:
-            properties["colorBackground"] = "000000"
-            properties["colorFirst"] = "49CEE6"
-            properties["colorSecond"] = "49B3E6"
-            properties["colorThird"] = "499EE6"
-            properties["colorFourth"] = "4985E6"
+            properties["colorBackground"] = "#000000"
+            properties["colorFirst"] = "#49CEE6"
+            properties["colorSecond"] = "#49B3E6"
+            properties["colorThird"] = "#499EE6"
+            properties["colorFourth"] = "#4985E6"
             
             // Arendelle Pink
         case 2:
-            properties["colorBackground"] = "000000"
-            properties["colorFirst"] = "E60087"
-            properties["colorSecond"] = "B800AD"
-            properties["colorThird"] = "8E00D7"
-            properties["colorFourth"] = "6600FF"
+            properties["colorBackground"] = "#000000"
+            properties["colorFirst"] = "#E60087"
+            properties["colorSecond"] = "#B800AD"
+            properties["colorThird"] = "#8E00D7"
+            properties["colorFourth"] = "#6600FF"
             
             // Simple Red
         case 3:
-            properties["colorBackground"] = "FFFFFF"
-            properties["colorFirst"] = "E70D20"
-            properties["colorSecond"] = "EC444B"
-            properties["colorThird"] = "F17E81"
-            properties["colorFourth"] = "F7BBBE"
+            properties["colorBackground"] = "#FFFFFF"
+            properties["colorFirst"] = "#E70D20"
+            properties["colorSecond"] = "#EC444B"
+            properties["colorThird"] = "#F17E81"
+            properties["colorFourth"] = "#F7BBBE"
             
             // White Legacy
         case 4:
-            properties["colorBackground"] = "EAEAEA"
-            properties["colorFirst"] = "030303"
-            properties["colorSecond"] = "313131"
-            properties["colorThird"] = "6D6D6D"
-            properties["colorFourth"] = "B3B3B3"
+            properties["colorBackground"] = "#EAEAEA"
+            properties["colorFirst"] = "#030303"
+            properties["colorSecond"] = "#313131"
+            properties["colorThird"] = "#6D6D6D"
+            properties["colorFourth"] = "#B3B3B3"
             
         default:
             break
