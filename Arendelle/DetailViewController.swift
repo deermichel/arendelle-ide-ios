@@ -106,8 +106,8 @@ class DetailViewController: UIViewController {
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
-        // save code
-        if file != "" {
+        // save code if file exists
+        if NSFileManager.defaultManager().fileExistsAtPath(file) {
             Files.write(file, text: textCode.text)
         }
         

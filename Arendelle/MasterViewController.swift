@@ -36,6 +36,7 @@ class MasterViewController: UITableViewController {
         if let split = self.splitViewController {
             let controllers = split.viewControllers
             self.detailViewController = controllers[controllers.count-1].topViewController as? DetailViewController
+            split.preferredDisplayMode = UISplitViewControllerDisplayMode.Automatic
         }
         
         // fill project list
@@ -55,30 +56,47 @@ class MasterViewController: UITableViewController {
         }
         
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // TODO: EXPERIMENTAL / loop
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let view = storyboard.instantiateViewControllerWithIdentifier("webView") as WebviewViewController
+        view.title = "Welcome to Arendelle"
+        view.html = "welcome"
+        presentViewController(view, animated: true, completion: nil)
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
         // Dispose of any resources that can be recreated.
-        
     }
 
     func insertNewObject(sender: AnyObject) {
         
         // show dialog for new Arendelle project
-        var alert = UIAlertController(title: "New project", message: "Enter a name and a name for the main function to create a new Arendelle project.", preferredStyle: UIAlertControllerStyle.Alert)
+        var alert = UIAlertController(title: "New", message: "Enter a name to create a new Arendelle project.", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { action in
             let textName = alert.textFields![0] as UITextField
-            let textMainFunctionName = alert.textFields![1] as UITextField
-            self.newProject(textName.text, mainFunctionName: textMainFunctionName.text)
+            //let textMainFunctionName = alert.textFields![1] as UITextField
+            
+            // check input
+            if textName.text == "" {
+                self.insertNewObject(sender)
+            } else {
+                self.newProject(textName.text, mainFunctionName: "main")
+            }
+            
         }))
         alert.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
             textField.placeholder = "Name"
         })
-        alert.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
+        /*alert.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
             textField.placeholder = "Name of main function"
-        })
+        })*/
         self.presentViewController(alert, animated: true, completion: nil)
         
     }
@@ -130,6 +148,29 @@ class MasterViewController: UITableViewController {
         
         // remove highlight color
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+    }
+    
+    override func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
+        
+        // show rename dialog
+        var alert = UIAlertController(title: "Rename", message: "Enter a new name for the project.", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { action in
+            let textName = alert.textFields![0] as UITextField
+            
+            // check input
+            if textName.text == "" {
+                self.tableView(tableView, accessoryButtonTappedForRowWithIndexPath: indexPath)
+            } else {
+                self.renameProject(indexPath.row, newName: textName.text)
+            }
+            
+        }))
+        alert.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
+            textField.placeholder = "New name"
+        })
+        self.presentViewController(alert, animated: true, completion: nil)
         
     }
 
@@ -187,8 +228,22 @@ class MasterViewController: UITableViewController {
         self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         
         // open project
-        tableView.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: UITableViewScrollPosition.None)
+        tableView.selectRowAtIndexPath(indexPath, animated: false, scrollPosition: .None)
         performSegueWithIdentifier("show", sender: self)
+        tableView(self.tableView, didSelectRowAtIndexPath: indexPath)
+        
+    }
+    
+    // renames a project
+    func renameProject(index: Int, newName: String) {
+        
+        let projectFolder = projectList[index]
+        let fileManager = NSFileManager.defaultManager()
+        fileManager.moveItemAtPath(Files.getDocsDir().stringByAppendingPathComponent(projectFolder), toPath: Files.getDocsDir().stringByAppendingPathComponent(newName), error: nil)
+        
+        projectList[index] = newName
+        var cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: index, inSection: 0))
+        cell!.textLabel!.text = newName
         
     }
 

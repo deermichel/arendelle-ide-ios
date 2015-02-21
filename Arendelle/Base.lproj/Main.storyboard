@@ -73,7 +73,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="N1A-aQ-Ove" style="IBUITableViewCellStyleDefault" id="6TA-CL-NAd">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" editingAccessoryType="detailButton" textLabel="N1A-aQ-Ove" style="IBUITableViewCellStyleDefault" id="6TA-CL-NAd">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6TA-CL-NAd" id="xsO-Pm-LSy">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -260,6 +260,7 @@
                             <constraint firstItem="spe-0H-JhR" firstAttribute="leading" secondItem="vIL-1E-iJH" secondAttribute="leading" id="ybv-ps-ZWp"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="errorsTableView" destination="spe-0H-JhR" id="WuH-DD-jHD"/>
                     </connections>
@@ -291,7 +292,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="Arm-wq-HPj" style="IBUITableViewCellStyleDefault" id="WCw-Qf-5nD">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" editingAccessoryType="detailButton" textLabel="Arm-wq-HPj" style="IBUITableViewCellStyleDefault" id="WCw-Qf-5nD">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
@@ -338,6 +339,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLD-UC-DBI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-45" y="129"/>
+        </scene>
+        <!--Webview View Controller-->
+        <scene sceneID="Yat-DQ-xg3">
+            <objects>
+                <viewController storyboardIdentifier="webView" modalPresentationStyle="formSheet" id="3Ah-1N-lDM" customClass="WebviewViewController" customModule="Arendelle" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XB6-2z-ekU"/>
+                        <viewControllerLayoutGuide type="bottom" id="iWf-vA-LW5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dYE-tP-Wr5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="um8-Lc-hOr">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Webview" id="2od-Sd-L4U">
+                                        <barButtonItem key="rightBarButtonItem" title="OK" id="rYU-jT-uCQ">
+                                            <connections>
+                                                <action selector="actionOK:" destination="3Ah-1N-lDM" id="tbC-Z2-O0n"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <webView contentMode="scaleToFill" keyboardDisplayRequiresUserAction="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCR-y2-gRp">
+                                <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="um8-Lc-hOr" secondAttribute="trailing" id="5xC-1P-Qsk"/>
+                            <constraint firstItem="PCR-y2-gRp" firstAttribute="top" secondItem="um8-Lc-hOr" secondAttribute="bottom" id="Aiz-B4-0W1"/>
+                            <constraint firstAttribute="bottom" secondItem="PCR-y2-gRp" secondAttribute="bottom" id="K2K-St-he3"/>
+                            <constraint firstItem="PCR-y2-gRp" firstAttribute="leading" secondItem="dYE-tP-Wr5" secondAttribute="leading" id="Vjs-3f-6kF"/>
+                            <constraint firstAttribute="trailing" secondItem="PCR-y2-gRp" secondAttribute="trailing" id="XLQ-K8-3jZ"/>
+                            <constraint firstItem="um8-Lc-hOr" firstAttribute="top" secondItem="XB6-2z-ekU" secondAttribute="bottom" id="lUs-kA-3gR"/>
+                            <constraint firstItem="um8-Lc-hOr" firstAttribute="leading" secondItem="dYE-tP-Wr5" secondAttribute="leading" id="sUp-H4-lpI"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="navigationBar" destination="um8-Lc-hOr" id="N4a-sN-UnG"/>
+                        <outlet property="webView" destination="PCR-y2-gRp" id="8we-zd-ky4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YTm-Gs-YEZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-856" y="473"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC0281571A9914D900DFF45F /* WebviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0281561A9914D900DFF45F /* WebviewViewController.swift */; };
+		EC0281841A99284400DFF45F /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = EC0281781A99284400DFF45F /* about.html */; };
+		EC0281851A99284400DFF45F /* done.png in Resources */ = {isa = PBXBuildFile; fileRef = EC0281791A99284400DFF45F /* done.png */; };
+		EC0281861A99284400DFF45F /* glider.png in Resources */ = {isa = PBXBuildFile; fileRef = EC02817A1A99284400DFF45F /* glider.png */; };
+		EC0281871A99284400DFF45F /* origin.png in Resources */ = {isa = PBXBuildFile; fileRef = EC02817B1A99284400DFF45F /* origin.png */; };
+		EC0281881A99284400DFF45F /* p.png in Resources */ = {isa = PBXBuildFile; fileRef = EC02817C1A99284400DFF45F /* p.png */; };
+		EC0281891A99284400DFF45F /* qbert.png in Resources */ = {isa = PBXBuildFile; fileRef = EC02817D1A99284400DFF45F /* qbert.png */; };
+		EC02818A1A99284400DFF45F /* rand.png in Resources */ = {isa = PBXBuildFile; fileRef = EC02817E1A99284400DFF45F /* rand.png */; };
+		EC02818B1A99284400DFF45F /* read_the_book.png in Resources */ = {isa = PBXBuildFile; fileRef = EC02817F1A99284400DFF45F /* read_the_book.png */; };
+		EC02818C1A99284400DFF45F /* rprdpdplplp.png in Resources */ = {isa = PBXBuildFile; fileRef = EC0281801A99284400DFF45F /* rprdpdplplp.png */; };
+		EC02818D1A99284400DFF45F /* signs.png in Resources */ = {isa = PBXBuildFile; fileRef = EC0281811A99284400DFF45F /* signs.png */; };
+		EC02818E1A99284400DFF45F /* urld.png in Resources */ = {isa = PBXBuildFile; fileRef = EC0281821A99284400DFF45F /* urld.png */; };
+		EC02818F1A99284400DFF45F /* welcome.html in Resources */ = {isa = PBXBuildFile; fileRef = EC0281831A99284400DFF45F /* welcome.html */; };
 		EC24EBF61A8680E600599CC9 /* PI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBA61A8680E600599CC9 /* PI.swift */; };
 		EC24EBF71A8680E600599CC9 /* PiTryCatch.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBA81A8680E600599CC9 /* PiTryCatch.m */; };
 		EC24EBF91A8680E600599CC9 /* Arendelle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBAB1A8680E600599CC9 /* Arendelle.swift */; };
@@ -75,6 +88,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC0281561A9914D900DFF45F /* WebviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebviewViewController.swift; sourceTree = "<group>"; };
+		EC0281781A99284400DFF45F /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
+		EC0281791A99284400DFF45F /* done.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = done.png; sourceTree = "<group>"; };
+		EC02817A1A99284400DFF45F /* glider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glider.png; sourceTree = "<group>"; };
+		EC02817B1A99284400DFF45F /* origin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = origin.png; sourceTree = "<group>"; };
+		EC02817C1A99284400DFF45F /* p.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p.png; sourceTree = "<group>"; };
+		EC02817D1A99284400DFF45F /* qbert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qbert.png; sourceTree = "<group>"; };
+		EC02817E1A99284400DFF45F /* rand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rand.png; sourceTree = "<group>"; };
+		EC02817F1A99284400DFF45F /* read_the_book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = read_the_book.png; sourceTree = "<group>"; };
+		EC0281801A99284400DFF45F /* rprdpdplplp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rprdpdplplp.png; sourceTree = "<group>"; };
+		EC0281811A99284400DFF45F /* signs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signs.png; sourceTree = "<group>"; };
+		EC0281821A99284400DFF45F /* urld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = urld.png; sourceTree = "<group>"; };
+		EC0281831A99284400DFF45F /* welcome.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = welcome.html; sourceTree = "<group>"; };
 		EC24EBA61A8680E600599CC9 /* PI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PI.swift; sourceTree = "<group>"; };
 		EC24EBA71A8680E600599CC9 /* PiTryCatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PiTryCatch.h; sourceTree = "<group>"; };
 		EC24EBA81A8680E600599CC9 /* PiTryCatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PiTryCatch.m; sourceTree = "<group>"; };
@@ -183,6 +209,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC0281771A99284400DFF45F /* htmls */ = {
+			isa = PBXGroup;
+			children = (
+				EC0281781A99284400DFF45F /* about.html */,
+				EC0281791A99284400DFF45F /* done.png */,
+				EC02817A1A99284400DFF45F /* glider.png */,
+				EC02817B1A99284400DFF45F /* origin.png */,
+				EC02817C1A99284400DFF45F /* p.png */,
+				EC02817D1A99284400DFF45F /* qbert.png */,
+				EC02817E1A99284400DFF45F /* rand.png */,
+				EC02817F1A99284400DFF45F /* read_the_book.png */,
+				EC0281801A99284400DFF45F /* rprdpdplplp.png */,
+				EC0281811A99284400DFF45F /* signs.png */,
+				EC0281821A99284400DFF45F /* urld.png */,
+				EC0281831A99284400DFF45F /* welcome.html */,
+			);
+			path = htmls;
+			sourceTree = "<group>";
+		};
 		EC24EBA41A8680E600599CC9 /* swifty */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,6 +345,7 @@
 			isa = PBXGroup;
 			children = (
 				EC24EBA41A8680E600599CC9 /* swifty */,
+				EC0281771A99284400DFF45F /* htmls */,
 				EC4BCBFA1A55D0F6002B340D /* AppDelegate.swift */,
 				EC4BCBFE1A55D0F6002B340D /* DetailViewController.swift */,
 				ECD619311A97DBDA00BA3E6B /* ErrorsViewController.swift */,
@@ -307,6 +353,7 @@
 				EC4BCBFC1A55D0F6002B340D /* MasterViewController.swift */,
 				ECEF4DA01A70397C007E1E34 /* ScreenViewController.swift */,
 				EC77EB471A7AC369004D09B8 /* SettingsViewController.swift */,
+				EC0281561A9914D900DFF45F /* WebviewViewController.swift */,
 				ECC6F08A1A55F07F007B701A /* Files.swift */,
 				EC4BCC001A55D0F6002B340D /* Main.storyboard */,
 				EC4BCC031A55D0F6002B340D /* Images.xcassets */,
@@ -422,8 +469,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC0281881A99284400DFF45F /* p.png in Resources */,
+				EC0281841A99284400DFF45F /* about.html in Resources */,
+				EC02818E1A99284400DFF45F /* urld.png in Resources */,
+				EC02818F1A99284400DFF45F /* welcome.html in Resources */,
+				EC0281851A99284400DFF45F /* done.png in Resources */,
+				EC0281891A99284400DFF45F /* qbert.png in Resources */,
+				EC02818D1A99284400DFF45F /* signs.png in Resources */,
 				EC4BCC021A55D0F6002B340D /* Main.storyboard in Resources */,
+				EC02818B1A99284400DFF45F /* read_the_book.png in Resources */,
+				EC02818C1A99284400DFF45F /* rprdpdplplp.png in Resources */,
 				EC4BCC071A55D0F6002B340D /* LaunchScreen.xib in Resources */,
+				EC02818A1A99284400DFF45F /* rand.png in Resources */,
+				EC0281861A99284400DFF45F /* glider.png in Resources */,
+				EC0281871A99284400DFF45F /* origin.png in Resources */,
 				EC4BCC041A55D0F6002B340D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,6 +519,7 @@
 				EC77EB481A7AC369004D09B8 /* SettingsViewController.swift in Sources */,
 				EC24EBFA1A8680E600599CC9 /* ArendelleFileSystem.swift in Sources */,
 				EC24EC131A8680E600599CC9 /* DDTypes.m in Sources */,
+				EC0281571A9914D900DFF45F /* WebviewViewController.swift in Sources */,
 				EC24EBF91A8680E600599CC9 /* Arendelle.swift in Sources */,
 				EC24EC111A8680E600599CC9 /* DDParser.m in Sources */,
 				EC24EC0C1A8680E600599CC9 /* DDExpressionRewriter.m in Sources */,

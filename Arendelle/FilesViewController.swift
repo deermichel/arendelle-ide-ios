@@ -24,9 +24,7 @@ class FilesViewController: UITableViewController {
         
         // Do any additional setup after loading the view, typically from a nib.
         
-        //self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        //let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
-        //self.navigationItem.rightBarButtonItem = addButton
+        self.navigationItem.rightBarButtonItem = self.editButtonItem()
         self.title = projectName
         
         // TODO: migrating from Android
@@ -54,9 +52,7 @@ class FilesViewController: UITableViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
         // Dispose of any resources that can be recreated.
-        
     }
     
     // MARK: - Segues
@@ -77,6 +73,7 @@ class FilesViewController: UITableViewController {
                 // save as current function
                 if file != currentFunction {
                     var properties = Files.parseConfigFile(configFile)
+                    currentFunction = file
                     properties["currentFunction"] = Files.getRelativePath(projectFolder, path: file)
                     Files.createConfigFile(configFile, properties: properties)
                 }
@@ -127,6 +124,15 @@ class FilesViewController: UITableViewController {
         }
     }
     
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        switch (indexPath.section) {
+        case 0:
+            return false
+        default:
+            return true
+        }
+    }
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
@@ -138,6 +144,61 @@ class FilesViewController: UITableViewController {
         }
         
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            
+            let file = projectFolder.stringByAppendingPathComponent(fileList[indexPath.row].stringByReplacingOccurrencesOfString(".", withString: "/", options: .LiteralSearch, range: nil) + ".arendelle")
+            
+            // throw error if user wants delete the main function
+            if mainFunction == file {
+                var alert = UIAlertController(title: "Delete", message: "You cannot delete the main function!", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+                self.setEditing(false, animated: true)
+                return
+            }
+            
+            // delete function
+            Files.delete(file)
+            fileList.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
+            // switch to main function if deleted function was current function
+            if currentFunction == file {
+                self.setEditing(false, animated: true)
+                let newIndex = NSIndexPath(forRow: find(fileList, Files.getRelativePath(projectFolder, path: mainFunction).componentsSeparatedByString(".arendelle")[0].stringByReplacingOccurrencesOfString("/", withString: ".", options: .LiteralSearch, range: nil))!, inSection: 1)
+                self.tableView.selectRowAtIndexPath(newIndex, animated: false, scrollPosition: .None)
+                performSegueWithIdentifier("showDetail", sender: self)
+                self.tableView(self.tableView, didSelectRowAtIndexPath: newIndex)
+            }
+            
+        } else if editingStyle == .Insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+        }
+    }
+    
+    override func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
+        
+        // show rename dialog
+        var alert = UIAlertController(title: "Rename", message: "Enter a new name for the function.", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { action in
+            let textName = alert.textFields![0] as UITextField
+            
+            // check input
+            if textName.text == "" {
+                self.tableView(tableView, accessoryButtonTappedForRowWithIndexPath: indexPath)
+            } else {
+                self.renameFunction(indexPath.row, newName: textName.text)
+            }
+            
+        }))
+        alert.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
+            textField.placeholder = "New name"
+        })
+        self.presentViewController(alert, animated: true, completion: nil)
         
     }
     
@@ -170,7 +231,7 @@ class FilesViewController: UITableViewController {
     // shows dialog for new function
     func showNewFunctionDialog() {
         
-        var alert = UIAlertController(title: "New function", message: "Enter a name for the new function.", preferredStyle: UIAlertControllerStyle.Alert)
+        var alert = UIAlertController(title: "New", message: "Enter a name for the new function.", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { action in
             let textName = alert.textFields![0] as UITextField
@@ -229,6 +290,58 @@ class FilesViewController: UITableViewController {
         tableView.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: .None)
         performSegueWithIdentifier("showDetail", sender: self)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+    }
+    
+    // renames a function
+    func renameFunction(index: Int, newName: String) {
+        
+        let oldFile = fileList[index].stringByReplacingOccurrencesOfString(".", withString: "/", options: .LiteralSearch, range: nil) + ".arendelle"
+        let newFile = newName.stringByReplacingOccurrencesOfString(".", withString: "/", options: .LiteralSearch, range: nil) + ".arendelle"
+        
+        if newName.componentsSeparatedByString(".").count > 1 {
+            
+            // really needed here
+            func getFoldersPath() -> String {
+                let elements = newName.componentsSeparatedByString(".")
+                var foldersPath = ""
+                for i in 0..<elements.count - 1 {
+                    foldersPath += elements[i] + "/"
+                }
+                foldersPath.removeAtIndex(advance(foldersPath.endIndex, -1))
+                return foldersPath
+            }
+            
+            // create folders for namespaces
+            var foldersPath = getFoldersPath()
+            let fileManager = NSFileManager.defaultManager()
+            let folders = projectFolder.stringByAppendingPathComponent(foldersPath)
+            fileManager.createDirectoryAtPath(folders, withIntermediateDirectories: true, attributes: nil, error: nil)
+            
+        }
+        
+        let fileManager = NSFileManager.defaultManager()
+        fileManager.moveItemAtPath(projectFolder.stringByAppendingPathComponent(oldFile), toPath: projectFolder.stringByAppendingPathComponent(newFile), error: nil)
+        
+        fileList[index] = newName
+        var cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: index, inSection: 1))
+        cell!.textLabel!.text = newName
+        
+        // update config file if necessary
+        if projectFolder.stringByAppendingPathComponent(oldFile) == mainFunction {
+            var properties = Files.parseConfigFile(configFile)
+            properties["mainFunction"] = newFile
+            Files.createConfigFile(configFile, properties: properties)
+            mainFunction = projectFolder.stringByAppendingPathComponent(newFile)
+        }
+        
+        // switch to new function if deleted function was current function
+        if projectFolder.stringByAppendingPathComponent(oldFile) == currentFunction {
+            self.setEditing(false, animated: true)
+            tableView.selectRowAtIndexPath(NSIndexPath(forRow: index, inSection: 1), animated: false, scrollPosition: .None)
+            performSegueWithIdentifier("showDetail", sender: self)
+            tableView(tableView, didSelectRowAtIndexPath: NSIndexPath(forRow: index, inSection: 1))
+        }
         
     }
     
