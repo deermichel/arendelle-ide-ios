@@ -53,6 +53,27 @@ class ErrorsViewController: UIViewController, UITableViewDataSource, UITableView
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
         cell.textLabel!.text = errors[indexPath.row]
+        var icon = ion_ios_bolt_outline
+        let error = errors[indexPath.row].lowercaseString
+        
+        // choose icon
+        if error.rangeOfString("unknown command") != nil {
+            icon = ion_ios_help_empty
+        } else if error.rangeOfString("bad expression") != nil {
+            //icon = ion_ios_bolt_outline
+        } else if error.rangeOfString("function") != nil {
+            icon = ion_ios_flask_outline
+        } else if error.rangeOfString("space") != nil {
+            icon = ion_ios_medical_outline
+        } else if error.rangeOfString("loop") != nil {
+            icon = ion_ios_infinite_outline
+        } else if error.rangeOfString("condition") != nil {
+            icon = ion_ios_shuffle
+        } else if error.rangeOfString("zone") != nil {
+            icon = ion_ios_close_empty
+        }
+        
+        cell.imageView!.image = IonIcons.imageWithIcon(icon, iconColor: UIColor(red: 230.0/255.0, green: 1.0/255.0, blue: 132.0/255.0, alpha: 1.0), iconSize: 30, imageSize: CGSize(width: 30, height: 30))
         
         return cell
     }

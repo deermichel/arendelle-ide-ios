@@ -30,8 +30,13 @@ class MasterViewController: UITableViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
-        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
-        self.navigationItem.rightBarButtonItem = addButton
+        //let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
+        let moreIcon = IonIcons.imageWithIcon(ion_ios_more,
+            iconColor: UIColor(red: 230.0/255.0, green: 1.0/255.0, blue: 132.0/255.0, alpha: 1.0),
+            iconSize: 32,
+            imageSize: CGSize(width: 22, height: 22))
+        let moreButton = UIBarButtonItem(image: moreIcon, style: .Plain, target: self, action: "actionMore:")
+        self.navigationItem.rightBarButtonItem = moreButton
         
         if let split = self.splitViewController {
             let controllers = split.viewControllers
@@ -65,7 +70,7 @@ class MasterViewController: UITableViewController {
         let view = storyboard.instantiateViewControllerWithIdentifier("webView") as WebviewViewController
         view.title = "Welcome to Arendelle"
         view.html = "welcome"
-        presentViewController(view, animated: true, completion: nil)
+        //presentViewController(view, animated: true, completion: nil)
         
     }
 
@@ -73,8 +78,27 @@ class MasterViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func actionMore(sender: AnyObject) {
+        
+        // show menu
+        var alert = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+        alert.addAction(UIAlertAction(title: "New Project", style: .Default, handler: { action in self.showNewProjectDialog() }))
+        alert.addAction(UIAlertAction(title: "Basics", style: .Default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Learn Arendelle", style: .Default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Help", style: .Default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Rate Me", style: .Default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Report Bug", style: .Default, handler: nil))
+        alert.addAction(UIAlertAction(title: "About", style: .Default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+        if let presentationController = alert.popoverPresentationController {
+            presentationController.barButtonItem = self.navigationItem.rightBarButtonItem
+        }
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+    }
 
-    func insertNewObject(sender: AnyObject) {
+    func showNewProjectDialog() {
         
         // show dialog for new Arendelle project
         var alert = UIAlertController(title: "New", message: "Enter a name to create a new Arendelle project.", preferredStyle: UIAlertControllerStyle.Alert)
@@ -85,7 +109,7 @@ class MasterViewController: UITableViewController {
             
             // check input
             if textName.text == "" {
-                self.insertNewObject(sender)
+                self.showNewProjectDialog()
             } else {
                 self.newProject(textName.text, mainFunctionName: "main")
             }

@@ -17,6 +17,7 @@ class FilesViewController: UITableViewController {
     var mainFunction: String = ""
     var fileList: [String] = []
     var optionsList: [String] = ["Add Function", "Project Settings"]
+    var optionsListIcons: [String] = [ion_ios_plus_outline, ion_ios_settings]
     
     
     override func viewDidLoad() {
@@ -136,12 +137,20 @@ class FilesViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+        var icon = ion_ios_flask_outline
+        
         switch (indexPath.section) {
         case 0:
             cell.textLabel!.text = optionsList[indexPath.row]
+            icon = optionsListIcons[indexPath.row]
         default:
             cell.textLabel!.text = fileList[indexPath.row]
+            if projectFolder.stringByAppendingPathComponent(fileList[indexPath.row].stringByReplacingOccurrencesOfString(".", withString: "/", options: .LiteralSearch, range: nil) + ".arendelle") == mainFunction {
+                icon = ion_ios_flame_outline
+            }
         }
+        
+        cell.imageView!.image = IonIcons.imageWithIcon(icon, iconColor: UIColor(red: 230.0/255.0, green: 1.0/255.0, blue: 132.0/255.0, alpha: 1.0), iconSize: 30, imageSize: CGSize(width: 30, height: 30))
         
         return cell
     }
@@ -346,6 +355,10 @@ class FilesViewController: UITableViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        
+        // update main function
+        mainFunction = projectFolder.stringByAppendingPathComponent(Files.parseConfigFile(configFile)["mainFunction"]!)
+        tableView.reloadData()
         
         // close editor keyboard
         if let split = self.splitViewController {
