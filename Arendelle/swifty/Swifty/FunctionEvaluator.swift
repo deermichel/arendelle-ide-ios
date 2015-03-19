@@ -8,8 +8,6 @@
 
 import Foundation
 
-
-
 func funcEval (#funcParts: FuncParts, inout #screen: codeScreen, inout #spaces: [String:[NSNumber]]) -> [NSNumber] {
     
     
@@ -55,7 +53,6 @@ func funcEval (#funcParts: FuncParts, inout #screen: codeScreen, inout #spaces: 
                 // FUNCTION SPACE'S EVAL
                 //
                 
-                
                 var numberOfHeaderParts = headerParts.count; if headerParts[0] == "" { numberOfHeaderParts--}
                 var numberOfFunctionParts = funcParts.inputs.count; if funcParts.inputs[0] == "" { numberOfFunctionParts--}
                 
@@ -78,13 +75,13 @@ func funcEval (#funcParts: FuncParts, inout #screen: codeScreen, inout #spaces: 
                         let spaceName = "@\(headerParts[counter])"
                         
                         
-                        //----- Space overwrite -----------------------------------------------------------------------------------------
+                        //----- Space overwrite -------------------------------------------------------------------
                         
                         if regexMatchForPartTwo.items.count == 1 && regexMatchForPartTwo.items[0] == spaceExpr {
                          
                             funcSpaces[spaceName] = spaceOverwriterWithID(spaceExpr, &spaces, &screen)
                             
-                        //----- Only first space ----------------------------------------------------------------------------------------
+                        //----- Only first space ------------------------------------------------------------------
                             
                         } else {
                             
@@ -103,7 +100,7 @@ func funcEval (#funcParts: FuncParts, inout #screen: codeScreen, inout #spaces: 
                             }
                         }
                         
-                        //---------------------------------------------------------------------------------------------------------------
+                        //-----------------------------------------------------------------------------------------
                     }
                     
                 //

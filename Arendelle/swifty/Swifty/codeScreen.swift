@@ -16,7 +16,6 @@ func report(text: String, inout screen: codeScreen) {
 
 
 struct codeScreen {
-    var stop = false
     
     //--- Init ---------------------------------------------
     init (xsize:Int, ysize: Int) {
@@ -36,6 +35,9 @@ struct codeScreen {
     //--- Title --------------------------------------------
     var title:String = "Arendelle"
     
+    
+    //--- Stop ---------------------------------------------
+    var stop = false
     
     //--- Func Name ----------------------------------------
     var funcName = "main"

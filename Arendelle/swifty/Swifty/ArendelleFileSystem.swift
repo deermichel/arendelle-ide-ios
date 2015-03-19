@@ -8,6 +8,35 @@
 
 import Foundation
 
+func storedSpaceFolderChecker (url: NSURL, mainPath: String) {
+    
+    let spaceName  = url.path! =~ "/[a-zA-Z0-9_]+\\.space"
+    let stringPath = url.path!.removeFromEnd(spaceName.items[0])
+    
+    // File manager
+    var fileManager = NSFileManager.defaultManager()
+    
+    if !fileManager.fileExistsAtPath(stringPath) {
+        
+        // Parts of our path
+        var urlParts = stringPath.componentsSeparatedByString("/")
+        
+        // Where we keep where we are
+        var currentFolder = "";
+        
+        // We check each level of folders
+        for part in urlParts {
+            
+            if !fileManager.fileExistsAtPath("\(currentFolder)/\(part)") {
+                
+                fileManager.createDirectoryAtPath("\(currentFolder)/\(part)", withIntermediateDirectories: false, attributes: nil, error: nil)
+                
+            }
+            
+            currentFolder = "\(currentFolder)/\(part)"
+        }
+    }
+}
 
 func arendellePathToNSURL (#arendellePath: String, #kind: String, inout #screen: codeScreen) -> NSURL {
     
@@ -25,12 +54,20 @@ func checkIfURLExists (URL:NSURL) -> Bool {
 
 }
 
-
 func removeFileWithURL (URL:NSURL) {
 
     let fileManager = NSFileManager();
     if fileManager.fileExistsAtPath(URL.path!) {
         fileManager.removeItemAtURL(URL, error: nil)
+    }
+}
+
+func checkToSeeIfItsANeedToCreateFoldersForStoredSpaceSaverWithURL (url: NSURL) {
+
+    if !checkIfURLExists(url) {
+        
+        var urlparts = url.path;
+    
     }
 }
 

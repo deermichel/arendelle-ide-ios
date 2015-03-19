@@ -17,7 +17,7 @@ func openCloseLexer ( #openCommand: Character, inout #arendelle: Arendelle, inou
     var arg:String = ""
     var args:[String] = []
     var whileControl = true
-    var openCloseDictionary:[Character:Character] = [ "{":"}", "(":")", "[":"]" , "<":">", "~":":" ]
+    var openCloseDictionary:[Character:Character] = [ "{":"}", "(":")", "[":"]" , "<":">", "|":"|" ]
     let closeCommand = openCloseDictionary[openCommand]!
     
     while arendelle.whileCondtion() && whileControl {
@@ -29,7 +29,13 @@ func openCloseLexer ( #openCommand: Character, inout #arendelle: Arendelle, inou
         case "," :
             args.append(arg)
             arg=""
-
+            
+        
+        case "'", "\"" :
+            var spaces : [String:[NSNumber]] = ["return":[0]]
+            arg += "\(command)\(onePartOpenCloseParser(openCloseCommand: command, spaces: &spaces, arendelle: &arendelle, screen: &screen, preprocessorState: true))\(command)"
+            --arendelle.i
+            
             
         case "[", "(", "{" :
                                 
@@ -51,7 +57,7 @@ func openCloseLexer ( #openCommand: Character, inout #arendelle: Arendelle, inou
                                     
             default:
                 report("Grammar with more than 3 parts", &screen)
-                return["BadGrammar"]
+                return["BadGrammar"] 
                                     
             }
                                 
@@ -72,7 +78,7 @@ func openCloseLexer ( #openCommand: Character, inout #arendelle: Arendelle, inou
     
     if args.count == 0 { args.append("BadGrammar") }
                         
-    if whileControl == true { report ("Unfinished gramamr found", &screen) }
+    if whileControl == true { report ("Unfinished grammar found", &screen) }
     
     return args
 

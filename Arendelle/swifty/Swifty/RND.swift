@@ -13,13 +13,10 @@ import Foundation
 func arendelleRandom () -> String {
 
     var r:String = ""
-    switch arc4random_uniform(5) {
+    switch arc4random_uniform(10) {
     
-    case 2:
+    case 1:
         return "0.0\(arc4random_uniform(10000))"
-        
-    case 3:
-        return "0.00\(arc4random_uniform(10000))"
         
     default:
         return "0.\(arc4random_uniform(10000))"

@@ -9,5 +9,9 @@
 import Foundation
 
 func spaceInput (#text: String, inout #screen: codeScreen) -> NSNumber {
-    return 0;
+    return 0
+}
+
+func titleWriteLine (text: String) {
+
 }

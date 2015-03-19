@@ -123,9 +123,9 @@ func replacer (#expressionString: String, inout #spaces: [String:[NSNumber]], in
     var part = ""
     func cleanPart () {
         part = part.replace("floor", withString: "floo_r")
-        part = part.replace("or", withString: "||")
+        part = part.replace("or", withString: "&&")
         part = part.replace("floo_r", withString: "floor")
-        part = part.replace("and", withString: "&&")
+        part = part.replace("and", withString: "||")
         collection.append(part); part = ""
     }
     

@@ -137,7 +137,7 @@ class FilesViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
-        var icon = ion_ios_flask_outline
+        var icon = ion_ios_list_outline
         
         switch (indexPath.section) {
         case 0:
@@ -146,7 +146,7 @@ class FilesViewController: UITableViewController {
         default:
             cell.textLabel!.text = fileList[indexPath.row]
             if projectFolder.stringByAppendingPathComponent(fileList[indexPath.row].stringByReplacingOccurrencesOfString(".", withString: "/", options: .LiteralSearch, range: nil) + ".arendelle") == mainFunction {
-                icon = ion_ios_flame_outline
+                icon = ion_ios_list
             }
         }
         

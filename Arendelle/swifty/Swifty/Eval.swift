@@ -8,6 +8,7 @@
 
 import Foundation
 
+
     /// removes spaces defined eval
     func evalSpaceRemover (inout #spaces: [String:[NSNumber]], #spacesToBeRemoved: [String]) {
         for space in spacesToBeRemoved {
@@ -22,8 +23,6 @@ import Foundation
                     
         var spacesToRemove:[String] = []
         
-        var command:Character
-        
         /// Paints a dot in the matrix
         func paintInDot (color: Int) {
             if screen.x < screen.screen.colCount() && screen.y < screen.screen.rowCount()
@@ -33,9 +32,9 @@ import Foundation
         }
         
         
-        while (arendelle.i < arendelle.codeSize() && !screen.stop) {
+        while arendelle.i < arendelle.codeSize() && screen.whileSign && !screen.stop {
             
-            command = arendelle.readAtI()
+            var command = Character(arendelle.readAtI().toString().lowercaseString)
             
             switch command {
                 
@@ -56,10 +55,17 @@ import Foundation
                 let grammarParts = openCloseLexer(openCommand: "{", arendelle: &arendelle, screen: &screen)
                conditionEval(grammarParts: grammarParts, screen: &screen, spaces: &spaces, arendelle: &arendelle)
                 
-            case "'" :
-                screen.title = onePartOpenCloseParser(openCloseCommand: "'", spaces: &spaces, arendelle: &arendelle, screen: &screen, preprocessorState: false)
+            case "'", "\"" :
+                screen.title = onePartOpenCloseParser(openCloseCommand: command, spaces: &spaces, arendelle: &arendelle, screen: &screen, preprocessorState: false)
                 --arendelle.i
                 
+                if screen.errors.count == 0 {
+                    
+                    titleWriteLine(screen.title)
+
+                }
+               
+    
                 
             //
             // FUNCTION
@@ -100,26 +106,29 @@ import Foundation
             case "d":
                 screen.y++
                 
+            case "e":
+                screen.whileSign = false
+                
             case "w":
-                NSThread.sleepForTimeInterval(0.1)
+                NSThread.sleepForTimeInterval(0.001)
                 
             case "s":
                 report("Stop-Clean command is no longer supported by Arendelle compilers", &screen)
                 
             case ",":
-                report("Using gramamr divider ',' out of grammars", &screen)
+                report("Using grammar divider ',' out of grammars", &screen)
                 
             case "<", ">":
                 report("Using function header in middle of blueprint", &screen)
                 
             case "]", "}", ")" :
-                report("Grammar closer: '\(command)' is used for an undifined grammar", &screen)
+                report("Grammar closer: '\(command)' is used for an undefined grammar", &screen)
                 
             case ";":
                 report("Semicolons found in command-zone", &screen)
                 
             case ":":
-                report("In-Founction comment sign found in command-zone", &screen)
+                report("In-Function comment sign found in command-zone", &screen)
                 
             case "@":
                 report("Space sign found in command-zone", &screen)

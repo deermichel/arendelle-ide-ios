@@ -57,13 +57,15 @@ func loopEval (#grammarParts: [String], inout #screen: codeScreen, inout #spaces
                 
                 let condition = grammarParts[0]
             
-                while ( mathEval(stringExpression: condition, screen: &screen, spaces: &spaces).result == 1) {
+                while ( mathEval(stringExpression: condition, screen: &screen, spaces: &spaces).result == 1 && screen.whileSign ) {
             
                     var conditionalLoopsCode = Arendelle(code: grammarParts[1])
                     let toBeRemoved = eval(&conditionalLoopsCode, &screen, &spaces)
                     evalSpaceRemover(spaces: &spaces, spacesToBeRemoved: toBeRemoved)
             
                 }
+                
+                screen.whileSign = true
                 
             } else {
             

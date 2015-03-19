@@ -65,12 +65,19 @@ class MasterViewController: UITableViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        // TODO: EXPERIMENTAL / loop
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let view = storyboard.instantiateViewControllerWithIdentifier("webView") as WebviewViewController
-        view.title = "Welcome to Arendelle"
-        view.html = "welcome"
-        //presentViewController(view, animated: true, completion: nil)
+        // first start
+        let prefs = NSUserDefaults.standardUserDefaults()
+        if !prefs.boolForKey("firstStart") {
+            prefs.setBool(true, forKey: "firstStart")
+            
+            // open welcome dialog
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let view = storyboard.instantiateViewControllerWithIdentifier("webView") as WebviewViewController
+            view.title = "Welcome to Arendelle"
+            view.html = "welcome"
+            presentViewController(view, animated: true, completion: nil)
+            
+        }
         
     }
 
@@ -81,15 +88,57 @@ class MasterViewController: UITableViewController {
     
     func actionMore(sender: AnyObject) {
         
-        // show menu
+        // setup and show menu
         var alert = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
-        alert.addAction(UIAlertAction(title: "New Project", style: .Default, handler: { action in self.showNewProjectDialog() }))
-        alert.addAction(UIAlertAction(title: "Basics", style: .Default, handler: nil))
-        alert.addAction(UIAlertAction(title: "Learn Arendelle", style: .Default, handler: nil))
-        alert.addAction(UIAlertAction(title: "Help", style: .Default, handler: nil))
-        alert.addAction(UIAlertAction(title: "Rate Me", style: .Default, handler: nil))
-        alert.addAction(UIAlertAction(title: "Report Bug", style: .Default, handler: nil))
-        alert.addAction(UIAlertAction(title: "About", style: .Default, handler: nil))
+        alert.addAction(UIAlertAction(title: "New Project", style: .Default, handler: { action in self.showNewProjectDialog() }))   // new project
+        alert.addAction(UIAlertAction(title: "Basics", style: .Default, handler: { action in
+            
+            // show welcome screen
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let view = storyboard.instantiateViewControllerWithIdentifier("webView") as WebviewViewController
+            view.title = "Basics"
+            view.html = "welcome"
+            self.presentViewController(view, animated: true, completion: nil)
+            
+        }))
+        alert.addAction(UIAlertAction(title: "Learn Arendelle", style: .Default, handler: { action in
+            
+            // learn Arendelle (book)
+            UIApplication.sharedApplication().openURL(NSURL(string: "http://web.arendelle.org/book")!)
+            return
+            
+        }))
+        alert.addAction(UIAlertAction(title: "Help", style: .Default, handler: { action in
+            
+            // show help
+            UIApplication.sharedApplication().openURL(NSURL(string: "http://web.arendelle.org/book/getting_started/arendelle_ios_app.html")!)
+            return
+            
+        }))
+        alert.addAction(UIAlertAction(title: "Rate Me", style: .Default, handler: { action in
+            
+            // rate app
+            UIApplication.sharedApplication().openURL(NSURL(string: "itms-apps://itunes.apple.com/app/idYOUR_APP_ID")!)
+            return
+            
+        }))
+        alert.addAction(UIAlertAction(title: "Report Bug", style: .Default, handler: { action in
+            
+            // report bug
+            UIApplication.sharedApplication().openURL(NSURL(string: "http://reporter.arendelle.org/bug/ios")!)
+            return
+            
+        }))
+        alert.addAction(UIAlertAction(title: "About", style: .Default, handler: { action in
+            
+            // show about screen
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let view = storyboard.instantiateViewControllerWithIdentifier("webView") as WebviewViewController
+            view.title = "About"
+            view.html = "about"
+            self.presentViewController(view, animated: true, completion: nil)
+            
+        }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
         if let presentationController = alert.popoverPresentationController {
             presentationController.barButtonItem = self.navigationItem.rightBarButtonItem

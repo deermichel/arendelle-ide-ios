@@ -77,6 +77,11 @@ func mathEval (#stringExpression: String, inout #screen: codeScreen, inout #spac
             
         }, finally: { () -> Void in })
         
+        if totalResult.result == "NaN" {
+        
+            screen.errors.append("Overflow: Very huge number")
+            totalResult.doesItHaveErros = true;
+        }
         
         return totalResult
         

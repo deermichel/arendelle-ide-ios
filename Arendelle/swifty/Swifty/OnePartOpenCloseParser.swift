@@ -33,6 +33,44 @@ func onePartOpenCloseParser (#openCloseCommand:Character, inout #spaces: [String
             arendelle.i++
             return result
             
+        case "|" :
+            var replacerParts = openCloseLexer(openCommand: "|", arendelle: &arendelle, screen: &screen)
+            var replacerOnePart = ""
+            for part in replacerParts { replacerOnePart += part }
+            
+            if preprocessorState == true {
+                result += "|"
+                result += replacerOnePart
+                result += "|"
+                
+                if arendelle.i >= arendelle.codeSize() {
+                    report("Unfinished string interpolation | ... | found", &screen)
+                }
+                
+            } else {
+                if replacerOnePart != "" {
+                    
+                    result += mathEval(stringExpression: replacerOnePart, screen: &screen, spaces: &spaces).result.stringValue
+                    
+                } else {
+                    var errtext = ""
+                    
+                    if result.utf16Count > 10 {
+                        
+                        
+                        
+                    } else {
+                        
+                        errtext = result
+                        
+                    }
+                    
+                    screen.errors.append("Empty string interpolation found: \"\(result)| ... |")
+                }
+            }
+            
+            --arendelle.i
+            
         case "\\" :
             
             if arendelle.whileCondtion() {
@@ -42,6 +80,12 @@ func onePartOpenCloseParser (#openCloseCommand:Character, inout #spaces: [String
                 
                 switch charToRead {
                     
+                case "n" :
+                    result += "\n"
+                    
+                case "t" :
+                    result += "   " // 1 tab in Arendelle == 3 white spaces;
+                    
                 case "\"" :
                     result += "\""
                     
@@ -50,6 +94,16 @@ func onePartOpenCloseParser (#openCloseCommand:Character, inout #spaces: [String
                     
                 case "\\" :
                     result += "\\"
+                    
+                case "|" :
+                    result += "|"
+                    
+                    
+                /* 
+                    
+                    /* ----------------------------------------------------------------------- *
+                     * ::::: I N   C A S E   O F   S W I F T   I N T E R P O L A T I O N ::::: *
+                     * ----------------------------------------------------------------------- */
                     
                 case "(" :
                     var replacerParts = openCloseLexer(openCommand: "(", arendelle: &arendelle, screen: &screen)
@@ -62,14 +116,32 @@ func onePartOpenCloseParser (#openCloseCommand:Character, inout #spaces: [String
                         result += ")"
                         
                         if arendelle.i >= arendelle.codeSize() {
-                            report("Unfinished replace scape \\( ... ) found", &screen)
+                            report("Unfinished string interpolation \\( ... ) found", &screen)
                         }
                         
                     } else {
-                        result += mathEval(stringExpression: replacerOnePart, screen: &screen, spaces: &spaces).result.stringValue
+                        if replacerOnePart != "" {
+                            
+                            result += mathEval(stringExpression: replacerOnePart, screen: &screen, spaces: &spaces).result.stringValue
+                            
+                        } else {
+                            var errtext = ""
+                            
+                            if result.utf16Count > 10 {
+                            
+                                
+                            
+                            } else {
+                            
+                                errtext = result
+                            
+                            }
+                            
+                            screen.errors.append("Empty string interpolation found: \"\(result)\\()...\"")
+                        }
                     }
                     
-                    --arendelle.i
+                    --arendelle.i */
                     
                 default:
                     report("Bad escape sequence: '\\\(charToRead)'", &screen)

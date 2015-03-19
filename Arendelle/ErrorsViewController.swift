@@ -61,15 +61,21 @@ class ErrorsViewController: UIViewController, UITableViewDataSource, UITableView
             icon = ion_ios_help_empty
         } else if error.rangeOfString("bad expression") != nil {
             //icon = ion_ios_bolt_outline
+        } else if error.rangeOfString("zone") != nil {
+            icon = ion_ios_close_empty
+        } else if error.rangeOfString("comment") != nil {
+            icon = ion_ios_chatbubble_outline
         } else if error.rangeOfString("function") != nil {
-            icon = ion_ios_flask_outline
+            icon = ion_ios_list_outline
         } else if error.rangeOfString("space") != nil {
             icon = ion_ios_medical_outline
         } else if error.rangeOfString("loop") != nil {
             icon = ion_ios_infinite_outline
         } else if error.rangeOfString("condition") != nil {
             icon = ion_ios_shuffle
-        } else if error.rangeOfString("zone") != nil {
+        } else if error.rangeOfString("no longer supported") != nil {
+            icon = ion_ios_close_empty
+        } else if error.rangeOfString("not accepted") != nil {
             icon = ion_ios_close_empty
         }
         

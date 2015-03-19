@@ -26,7 +26,6 @@
 		EC24EBFA1A8680E600599CC9 /* ArendelleFileSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBAC1A8680E600599CC9 /* ArendelleFileSystem.swift */; };
 		EC24EBFB1A8680E600599CC9 /* codeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBAD1A8680E600599CC9 /* codeScreen.swift */; };
 		EC24EBFC1A8680E600599CC9 /* ConditonEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBAE1A8680E600599CC9 /* ConditonEvaluator.swift */; };
-		EC24EBFD1A8680E600599CC9 /* CoreInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBAF1A8680E600599CC9 /* CoreInterface.swift */; };
 		EC24EBFE1A8680E600599CC9 /* _DDDecimalFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBB21A8680E600599CC9 /* _DDDecimalFunctions.m */; };
 		EC24EBFF1A8680E600599CC9 /* _DDFunctionEvaluator.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBB41A8680E600599CC9 /* _DDFunctionEvaluator.m */; };
 		EC24EC001A8680E600599CC9 /* _DDFunctionExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBB61A8680E600599CC9 /* _DDFunctionExpression.m */; };
@@ -70,6 +69,7 @@
 		EC4BCC041A55D0F6002B340D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC4BCC031A55D0F6002B340D /* Images.xcassets */; };
 		EC4BCC071A55D0F6002B340D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC4BCC051A55D0F6002B340D /* LaunchScreen.xib */; };
 		EC4BCC131A55D0F6002B340D /* ArendelleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4BCC121A55D0F6002B340D /* ArendelleTests.swift */; };
+		EC67766E1ABB46B700BC50CC /* CoreInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC67766D1ABB46B700BC50CC /* CoreInterface.swift */; };
 		EC77EB481A7AC369004D09B8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC77EB471A7AC369004D09B8 /* SettingsViewController.swift */; };
 		ECC6F08B1A55F07F007B701A /* Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC6F08A1A55F07F007B701A /* Files.swift */; };
 		ECCE3D121A9A42E10013E46F /* IonIcons.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCE3D0E1A9A42E10013E46F /* IonIcons.m */; };
@@ -111,7 +111,6 @@
 		EC24EBAC1A8680E600599CC9 /* ArendelleFileSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArendelleFileSystem.swift; sourceTree = "<group>"; };
 		EC24EBAD1A8680E600599CC9 /* codeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = codeScreen.swift; sourceTree = "<group>"; };
 		EC24EBAE1A8680E600599CC9 /* ConditonEvaluator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConditonEvaluator.swift; sourceTree = "<group>"; };
-		EC24EBAF1A8680E600599CC9 /* CoreInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreInterface.swift; sourceTree = "<group>"; };
 		EC24EBB11A8680E600599CC9 /* _DDDecimalFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DDDecimalFunctions.h; sourceTree = "<group>"; };
 		EC24EBB21A8680E600599CC9 /* _DDDecimalFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DDDecimalFunctions.m; sourceTree = "<group>"; };
 		EC24EBB31A8680E600599CC9 /* _DDFunctionEvaluator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DDFunctionEvaluator.h; sourceTree = "<group>"; };
@@ -187,6 +186,7 @@
 		EC4BCC0C1A55D0F6002B340D /* ArendelleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArendelleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC4BCC111A55D0F6002B340D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC4BCC121A55D0F6002B340D /* ArendelleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArendelleTests.swift; sourceTree = "<group>"; };
+		EC67766D1ABB46B700BC50CC /* CoreInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreInterface.swift; sourceTree = "<group>"; };
 		EC77EB471A7AC369004D09B8 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		ECC6F08A1A55F07F007B701A /* Files.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Files.swift; sourceTree = "<group>"; };
 		ECCE3D0C1A9A42E10013E46F /* ionicons-codes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ionicons-codes.h"; sourceTree = "<group>"; };
@@ -256,7 +256,7 @@
 				EC24EBAC1A8680E600599CC9 /* ArendelleFileSystem.swift */,
 				EC24EBAD1A8680E600599CC9 /* codeScreen.swift */,
 				EC24EBAE1A8680E600599CC9 /* ConditonEvaluator.swift */,
-				EC24EBAF1A8680E600599CC9 /* CoreInterface.swift */,
+				EC67766D1ABB46B700BC50CC /* CoreInterface.swift */,
 				EC24EBB01A8680E600599CC9 /* DDMathParser */,
 				EC24EBE41A8680E600599CC9 /* Eval.swift */,
 				EC24EBE51A8680E600599CC9 /* FunctionEvaluator.swift */,
@@ -543,6 +543,7 @@
 				EC24EC031A8680E600599CC9 /* _DDNumberExpression.m in Sources */,
 				EC77EB481A7AC369004D09B8 /* SettingsViewController.swift in Sources */,
 				EC24EBFA1A8680E600599CC9 /* ArendelleFileSystem.swift in Sources */,
+				EC67766E1ABB46B700BC50CC /* CoreInterface.swift in Sources */,
 				EC24EC131A8680E600599CC9 /* DDTypes.m in Sources */,
 				EC0281571A9914D900DFF45F /* WebviewViewController.swift in Sources */,
 				EC24EBF91A8680E600599CC9 /* Arendelle.swift in Sources */,
@@ -563,7 +564,6 @@
 				EC24EC1C1A8680E600599CC9 /* MathEvaluator.swift in Sources */,
 				EC24EC061A8680E600599CC9 /* _DDParserTerm.m in Sources */,
 				EC24EC091A8680E600599CC9 /* _DDVariableExpression.m in Sources */,
-				EC24EBFD1A8680E600599CC9 /* CoreInterface.swift in Sources */,
 				EC24EBFB1A8680E600599CC9 /* codeScreen.swift in Sources */,
 				EC24EC001A8680E600599CC9 /* _DDFunctionExpression.m in Sources */,
 				EC24EC1E1A8680E600599CC9 /* OpenCloseLexer.swift in Sources */,

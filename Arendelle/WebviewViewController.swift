@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WebviewViewController: UIViewController {
+class WebviewViewController: UIViewController, UIWebViewDelegate {
     
     var html: String = ""
     
@@ -23,11 +23,22 @@ class WebviewViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         self.navigationBar.topItem?.title = self.title
+        webView.delegate = self
         webView.loadRequest(NSURLRequest(URL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(html, ofType: "html")!, isDirectory: false)!))
         
     }
     
     override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
+    // open links in Safari
+    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        if navigationType == UIWebViewNavigationType.LinkClicked {
+            UIApplication.sharedApplication().openURL(request.URL)
+            return false
+        }
+        
         return true
     }
     
