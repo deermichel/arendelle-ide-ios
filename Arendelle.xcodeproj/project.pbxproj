@@ -62,6 +62,7 @@
 		EC24EC201A8680E600599CC9 /* RND.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBEE1A8680E600599CC9 /* RND.swift */; };
 		EC24EC211A8680E600599CC9 /* SpaceEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBEF1A8680E600599CC9 /* SpaceEvaluator.swift */; };
 		EC24EC221A8680E600599CC9 /* spaceOverwriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC24EBF01A8680E600599CC9 /* spaceOverwriter.swift */; };
+		EC2E27351AC88D7A007B0C1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC4BCC001A55D0F6002B340D /* Main.storyboard */; };
 		EC4BCBFB1A55D0F6002B340D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4BCBFA1A55D0F6002B340D /* AppDelegate.swift */; };
 		EC4BCBFD1A55D0F6002B340D /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4BCBFC1A55D0F6002B340D /* MasterViewController.swift */; };
 		EC4BCBFF1A55D0F6002B340D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4BCBFE1A55D0F6002B340D /* DetailViewController.swift */; };
@@ -177,6 +178,7 @@
 		EC24EBEF1A8680E600599CC9 /* SpaceEvaluator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceEvaluator.swift; sourceTree = "<group>"; };
 		EC24EBF01A8680E600599CC9 /* spaceOverwriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = spaceOverwriter.swift; sourceTree = "<group>"; };
 		EC24EBF11A8680E600599CC9 /* Swifty-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Swifty-Bridging-Header.h"; sourceTree = "<group>"; };
+		EC2E27341AC88D6C007B0C1E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		EC4BCBF51A55D0F6002B340D /* Arendelle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arendelle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC4BCBF91A55D0F6002B340D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC4BCBFA1A55D0F6002B340D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -520,6 +522,7 @@
 				EC02818D1A99284400DFF45F /* signs.png in Resources */,
 				EC69AF6F1AC864E700F7FEC2 /* LaunchScreen.storyboard in Resources */,
 				ECCE3D141A9A42E10013E46F /* LICENSE in Resources */,
+				EC2E27351AC88D7A007B0C1E /* Main.storyboard in Resources */,
 				EC02818B1A99284400DFF45F /* read_the_book.png in Resources */,
 				EC02818C1A99284400DFF45F /* rprdpdplplp.png in Resources */,
 				ECCE3D131A9A42E10013E46F /* ionicons.ttf in Resources */,
@@ -623,6 +626,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				EC4BCC011A55D0F6002B340D /* Base */,
+				EC2E27341AC88D6C007B0C1E /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

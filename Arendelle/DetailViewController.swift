@@ -24,8 +24,10 @@ class DetailViewController: UIViewController {
         if file != "" {
             self.navigationItem.title = file.lastPathComponent.componentsSeparatedByString(".arendelle")[0]
             textCode.text = Files.read(file)
+            view.userInteractionEnabled = true
         } else {
             textCode.text = ""
+            view.userInteractionEnabled = false
         }
         
     }
@@ -160,6 +162,16 @@ class DetailViewController: UIViewController {
                 
             }
             
+        }
+        
+    }
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+        
+        if file != "" {
+            return true
+        } else {
+            return false
         }
         
     }

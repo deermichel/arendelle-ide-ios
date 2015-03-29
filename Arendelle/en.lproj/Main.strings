@@ -1,0 +1,60 @@
+
+/* Class = "UIBarButtonItem"; title = "OK"; ObjectID = "1f7-ay-kbu"; */
+"1f7-ay-kbu.title" = "OK";
+
+/* Class = "UINavigationItem"; title = "Problem!"; ObjectID = "2Mz-4z-uuZ"; */
+"2Mz-4z-uuZ.title" = "Problem!";
+
+/* Class = "UINavigationItem"; title = "Webview"; ObjectID = "2od-Sd-L4U"; */
+"2od-Sd-L4U.title" = "Webview";
+
+/* Class = "UITextView"; text = "Text"; ObjectID = "7im-eR-NUh"; */
+"7im-eR-NUh.text" = "Text";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "Arm-wq-HPj"; */
+"Arm-wq-HPj.text" = "Title";
+
+/* Class = "UINavigationItem"; title = "Files"; ObjectID = "ELo-dL-tbG"; */
+"ELo-dL-tbG.title" = "Files";
+
+/* Class = "UIViewController"; title = "Screen"; ObjectID = "JLo-Nc-GLi"; */
+"JLo-Nc-GLi.title" = "Screen";
+
+/* Class = "UILabel"; text = "Change color palette"; ObjectID = "Ke1-zT-GU0"; */
+"Ke1-zT-GU0.text" = "Change color palette";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "N1A-aQ-Ove"; */
+"N1A-aQ-Ove.text" = "Title";
+
+/* Class = "UINavigationController"; title = "Project"; ObjectID = "RMx-3f-FxP"; */
+"RMx-3f-FxP.title" = "Project";
+
+/* Class = "UINavigationItem"; title = "Projects"; ObjectID = "Zdf-7t-Un8"; */
+"Zdf-7t-Un8.title" = "Projects";
+
+/* Class = "UINavigationItem"; title = "Project Settings"; ObjectID = "bff-sL-epM"; */
+"bff-sL-epM.title" = "Project Settings";
+
+/* Class = "UINavigationItem"; title = "Editor"; ObjectID = "mOI-FS-AaM"; */
+"mOI-FS-AaM.title" = "Editor";
+
+/* Class = "UINavigationItem"; title = "Screen"; ObjectID = "q2i-iy-dPP"; */
+"q2i-iy-dPP.title" = "Screen";
+
+/* Class = "UIViewController"; title = "Errors"; ObjectID = "qbI-AZ-WsJ"; */
+"qbI-AZ-WsJ.title" = "Errors";
+
+/* Class = "UITableViewController"; title = "Files"; ObjectID = "r3w-jy-H8z"; */
+"r3w-jy-H8z.title" = "Files";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "rTT-fX-dJi"; */
+"rTT-fX-dJi.text" = "Title";
+
+/* Class = "UIBarButtonItem"; title = "OK"; ObjectID = "rYU-jT-uCQ"; */
+"rYU-jT-uCQ.title" = "OK";
+
+/* Class = "UINavigationController"; title = "Editor"; ObjectID = "vC3-pB-5Vb"; */
+"vC3-pB-5Vb.title" = "Editor";
+
+/* Class = "UILabel"; text = "Change main function"; ObjectID = "vWR-cN-0BK"; */
+"vWR-cN-0BK.text" = "Change main function";

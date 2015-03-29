@@ -372,7 +372,6 @@
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </webView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="um8-Lc-hOr" secondAttribute="trailing" id="5xC-1P-Qsk"/>
                             <constraint firstItem="PCR-y2-gRp" firstAttribute="top" secondItem="um8-Lc-hOr" secondAttribute="bottom" id="Aiz-B4-0W1"/>
