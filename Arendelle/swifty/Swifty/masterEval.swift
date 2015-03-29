@@ -16,6 +16,7 @@ func preprocessor (#codeToBeSpaceFixed: String, inout #screen: codeScreen) -> St
 
     var theCode = Arendelle (code: codeToBeSpaceFixed)
     var result : String = ""
+    var tempArray = Array(theCode.code)
     
     while theCode.whileCondtion() {
         
@@ -33,7 +34,7 @@ func preprocessor (#codeToBeSpaceFixed: String, inout #screen: codeScreen) -> St
             
         case "/" :
             ++theCode.i
-            currentChar = Array(theCode.code)[theCode.i]
+            currentChar = tempArray[theCode.i]
             
             //
             // SLASH SLASH COMMENT REMOVER
@@ -48,7 +49,7 @@ func preprocessor (#codeToBeSpaceFixed: String, inout #screen: codeScreen) -> St
                 
                 while theCode.i < theCode.code.utf16Count && whileControl {
                     
-                    currentChar = Array(theCode.code)[theCode.i]
+                    currentChar = tempArray[theCode.i]
                     
                     if currentChar == "\n" {
                         
@@ -74,7 +75,7 @@ func preprocessor (#codeToBeSpaceFixed: String, inout #screen: codeScreen) -> St
                 
                 while theCode.i < theCode.code.utf16Count && whileControl {
                     
-                    currentChar = Array(theCode.code)[theCode.i]
+                    currentChar = tempArray[theCode.i]
                     
                     if currentChar == "*" {
                         
@@ -82,7 +83,7 @@ func preprocessor (#codeToBeSpaceFixed: String, inout #screen: codeScreen) -> St
                         
                         if theCode.i < theCode.code.utf16Count {
                             
-                            currentChar = Array(theCode.code)[theCode.i]
+                            currentChar = tempArray[theCode.i]
                             
                             if currentChar == "/" {
                                 
@@ -91,7 +92,7 @@ func preprocessor (#codeToBeSpaceFixed: String, inout #screen: codeScreen) -> St
                             } else {
                                 
                                 theCode.i++
-                                currentChar = Array(theCode.code)[theCode.i]
+                                currentChar = tempArray[theCode.i]
                                 
                             }
                         }

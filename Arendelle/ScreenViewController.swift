@@ -41,19 +41,6 @@ class ScreenViewController: UIViewController {
         // set title
         self.title = projectFolder.lastPathComponent
         
-        // helper function: creates an UIColor from a hex string
-        func colorWithHexString(hex:String) -> UIColor {
-            var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).uppercaseString.substringFromIndex(1)
-            var rString = cString.substringToIndex(2)
-            var gString = cString.substringFromIndex(2).substringToIndex(2)
-            var bString = cString.substringFromIndex(4).substringToIndex(2)
-            var r:CUnsignedInt = 0, g:CUnsignedInt = 0, b:CUnsignedInt = 0;
-            NSScanner(string: rString).scanHexInt(&r)
-            NSScanner(string: gString).scanHexInt(&g)
-            NSScanner(string: bString).scanHexInt(&b)
-            return UIColor(red: CGFloat(r) / 255.0, green: CGFloat(g) / 255.0, blue: CGFloat(b) / 255.0, alpha: CGFloat(1))
-        }
-        
         // get color palette
         let properties = Files.parseConfigFile(configFile)
         colorPalette.append(colorWithHexString(properties["colorBackground"]!))
@@ -62,6 +49,19 @@ class ScreenViewController: UIViewController {
         colorPalette.append(colorWithHexString(properties["colorThird"]!))
         colorPalette.append(colorWithHexString(properties["colorFourth"]!))
         
+    }
+    
+    // helper function: creates an UIColor from a hex string
+    private func colorWithHexString(hex:String) -> UIColor {
+        var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).uppercaseString.substringFromIndex(1)
+        var rString = cString.substringToIndex(2)
+        var gString = cString.substringFromIndex(2).substringToIndex(2)
+        var bString = cString.substringFromIndex(4).substringToIndex(2)
+        var r:CUnsignedInt = 0, g:CUnsignedInt = 0, b:CUnsignedInt = 0;
+        NSScanner(string: rString).scanHexInt(&r)
+        NSScanner(string: gString).scanHexInt(&g)
+        NSScanner(string: bString).scanHexInt(&b)
+        return UIColor(red: CGFloat(r) / 255.0, green: CGFloat(g) / 255.0, blue: CGFloat(b) / 255.0, alpha: CGFloat(1))
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -145,42 +145,44 @@ class ScreenViewController: UIViewController {
                 
             }
             
-        }
-        
-        // TODO: create preview image
-        /*size = CGSize(width: 5 * cellWidth, height: 5 * cellHeight)
-        UIGraphicsBeginImageContext(size)
-        context = UIGraphicsGetCurrentContext()
-        CGContextFillRect(context, CGRectMake(0, 0, size.width, size.height))
-        for x in 0..<5 {
-            for y in 0..<5 {
-                switch screen!.screen[x,y] {
+            // create preview image
+            let size = CGSize(width: self.screen!.screen.colCount() * self.cellWidth, height: 5 * self.cellHeight)
+            UIGraphicsBeginImageContext(size)
+            let context = UIGraphicsGetCurrentContext()
+            CGContextSetFillColorWithColor(context, self.colorWithHexString("#FFFFFF").CGColor)
+            CGContextFillRect(context, CGRectMake(0, 0, size.width, size.height))
+            CGContextSetAlpha(context, 0.1)
+            for x in 0..<self.screen!.screen.colCount() {
+                for y in 0..<5 {
+                    switch self.screen!.screen[x,y] {
+                        
+                    case 1:
+                        CGContextSetFillColorWithColor(context, self.colorWithHexString("#CECECE").CGColor)
+                        
+                    case 2:
+                        CGContextSetFillColorWithColor(context, self.colorWithHexString("#8C8A8C").CGColor)
+                        
+                    case 3:
+                        CGContextSetFillColorWithColor(context, self.colorWithHexString("#424542").CGColor)
+                        
+                    case 4:
+                        CGContextSetFillColorWithColor(context, self.colorWithHexString("#000000").CGColor)
+                        
+                    default:
+                        CGContextSetFillColorWithColor(context, self.colorWithHexString("#FFFFFF").CGColor)
+                        
+                    }
                     
-                case 1:
-                    CGContextSetFillColorWithColor(context, UIColor.whiteColor().CGColor)
-                    
-                case 2:
-                    CGContextSetFillColorWithColor(context, UIColor.lightGrayColor().CGColor)
-                    
-                case 3:
-                    CGContextSetFillColorWithColor(context, UIColor.grayColor().CGColor)
-                    
-                case 4:
-                    CGContextSetFillColorWithColor(context, UIColor.darkGrayColor().CGColor)
-                    
-                default:
-                    CGContextSetFillColorWithColor(context, UIColor.blackColor().CGColor)
-                    
+                    CGContextFillRect(context, CGRectMake(CGFloat(x * self.cellWidth), CGFloat(y * self.cellHeight), CGFloat(self.cellWidth), CGFloat(self.cellHeight)))
                 }
-                
-                CGContextFillRect(context, CGRectMake(CGFloat(x * cellWidth), CGFloat(y * cellHeight), CGFloat(cellWidth), CGFloat(cellHeight)))
             }
+            let result = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            
+            // save preview image
+            UIImagePNGRepresentation(result).writeToFile(self.projectFolder.stringByAppendingPathComponent(".preview.png"), atomically: true)
+            
         }
-        result = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        // save preview image
-        UIImagePNGRepresentation(result).writeToFile(projectFolder.stringByAppendingPathComponent(".preview.png"), atomically: true)*/
         
     }
     

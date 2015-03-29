@@ -66,13 +66,6 @@ class Files {
         
     }
     
-    // saves an image to the given file
-    class func saveImage(file: String, image: Int) {
-        
-        // TODO: write method
-        
-    }
-    
     // gets all files of a folder and its subfolders
     class func getFiles(folder: String) -> [String] {
         

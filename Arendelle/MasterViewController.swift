@@ -44,6 +44,15 @@ class MasterViewController: UITableViewController {
             split.preferredDisplayMode = UISplitViewControllerDisplayMode.Automatic
         }
         
+        // first start 1/2
+        let prefs = NSUserDefaults.standardUserDefaults()
+        if !prefs.boolForKey("firstStart") {
+            
+            // create example projects
+            createExampleProjects()
+            
+        }
+        
         // fill project list
         let fileManager = NSFileManager.defaultManager()
         let docsDir = Files.getDocsDir()
@@ -65,7 +74,7 @@ class MasterViewController: UITableViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        // first start
+        // first start 2/2
         let prefs = NSUserDefaults.standardUserDefaults()
         if !prefs.boolForKey("firstStart") {
             prefs.setBool(true, forKey: "firstStart")
@@ -78,6 +87,8 @@ class MasterViewController: UITableViewController {
             presentViewController(view, animated: true, completion: nil)
             
         }
+        
+        
         
     }
 
@@ -205,9 +216,12 @@ class MasterViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
         let project = projectList[indexPath.row]
         cell.textLabel!.text = project
-        /*if let preview = UIImage(contentsOfFile: Files.getDocsDir().stringByAppendingPathComponent(project).stringByAppendingPathComponent(".preview.png")) {
-            cell.imageView!.image = preview
-        }*/
+        if let preview = UIImage(contentsOfFile: Files.getDocsDir().stringByAppendingPathComponent(project).stringByAppendingPathComponent(".preview.png")) {
+            var imageView = UIImageView(image: preview)
+            imageView.contentMode = UIViewContentMode.ScaleAspectFill
+            imageView.clipsToBounds = true
+            cell.backgroundView = imageView
+        }
         
         return cell
     }
@@ -285,7 +299,7 @@ class MasterViewController: UITableViewController {
         // create main function
         Files.write(projectFolder.stringByAppendingPathComponent(mainFunctionName + ".arendelle"), text: "")
         
-        // TODO: create preview image
+        // create preview image
         /*var size = CGSize(width: 0, height: 0)
         UIGraphicsBeginImageContext(size)
         var context = UIGraphicsGetCurrentContext()
@@ -317,6 +331,115 @@ class MasterViewController: UITableViewController {
         projectList[index] = newName
         var cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: index, inSection: 0))
         cell!.textLabel!.text = newName
+        
+    }
+    
+    // creates a preview image
+    private func createPreviewImage(code: String) -> UIImage {
+        
+        var screen = codeScreen(xsize: Int(UIScreen.mainScreen().bounds.width) / Int(10.0 * UIScreen.mainScreen().scale), ysize: 5)
+        masterEvaluator(code: code, screen: &screen)
+        
+        // helper function: creates an UIColor from a hex string
+        func colorWithHexString(hex:String) -> UIColor {
+            var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).uppercaseString.substringFromIndex(1)
+            var rString = cString.substringToIndex(2)
+            var gString = cString.substringFromIndex(2).substringToIndex(2)
+            var bString = cString.substringFromIndex(4).substringToIndex(2)
+            var r:CUnsignedInt = 0, g:CUnsignedInt = 0, b:CUnsignedInt = 0;
+            NSScanner(string: rString).scanHexInt(&r)
+            NSScanner(string: gString).scanHexInt(&g)
+            NSScanner(string: bString).scanHexInt(&b)
+            return UIColor(red: CGFloat(r) / 255.0, green: CGFloat(g) / 255.0, blue: CGFloat(b) / 255.0, alpha: CGFloat(1))
+        }
+        
+        let size = CGSize(width: screen.screen.colCount() * Int(10.0 * UIScreen.mainScreen().scale), height: 5 * Int(10.0 * UIScreen.mainScreen().scale))
+        UIGraphicsBeginImageContext(size)
+        let context = UIGraphicsGetCurrentContext()
+        CGContextSetFillColorWithColor(context, colorWithHexString("#FFFFFF").CGColor)
+        CGContextFillRect(context, CGRectMake(0, 0, size.width, size.height))
+        CGContextSetAlpha(context, 0.1)
+        for x in 0..<screen.screen.colCount() {
+            for y in 0..<5 {
+                switch screen.screen[x,y] {
+                    
+                case 1:
+                    CGContextSetFillColorWithColor(context, colorWithHexString("#CECECE").CGColor)
+                    
+                case 2:
+                    CGContextSetFillColorWithColor(context, colorWithHexString("#8C8A8C").CGColor)
+                    
+                case 3:
+                    CGContextSetFillColorWithColor(context, colorWithHexString("#424542").CGColor)
+                    
+                case 4:
+                    CGContextSetFillColorWithColor(context, colorWithHexString("#000000").CGColor)
+                    
+                default:
+                    CGContextSetFillColorWithColor(context, colorWithHexString("#FFFFFF").CGColor)
+                    
+                }
+                
+                CGContextFillRect(context, CGRectMake(CGFloat(x * Int(10.0 * UIScreen.mainScreen().scale)), CGFloat(y * Int(10.0 * UIScreen.mainScreen().scale)), CGFloat(Int(10.0 * UIScreen.mainScreen().scale)), CGFloat(Int(10.0 * UIScreen.mainScreen().scale))))
+            }
+        }
+        let result = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return result
+    }
+    
+    // creates example projects
+    private func createExampleProjects() {
+        
+        let examples = [    [   "example_10print",  "10print.arendelle",    "10 PRINT",     "2" ],
+                            [   "example_qbert",    "qbert.arendelle",      "Q-Bert",       "0" ],
+                            [   "example_basic1",   "basic1.arendelle",     "Basic 1",      "0" ]
+        ]
+        
+        for example in examples {
+            
+            // create project folder
+            let fileManager = NSFileManager.defaultManager()
+            let docsDir = Files.getDocsDir()
+            let projectFolder = docsDir.stringByAppendingPathComponent(example[2])
+            fileManager.createDirectoryAtPath(projectFolder, withIntermediateDirectories: true, attributes: nil, error: nil)
+            
+            // copy files
+            fileManager.copyItemAtPath(NSBundle.mainBundle().pathForResource(example[0], ofType: ".arendelle")!, toPath: projectFolder.stringByAppendingPathComponent(example[1]), error: nil)
+            
+            // create config file
+            var properties = [String: String]()
+            properties["mainFunction"] = example[1]
+            properties["currentFunction"] = properties["mainFunction"]
+            properties["colorPalette"] = example[3]
+            switch example[3].toInt()! {
+                
+                // Arendelle Classic
+            case 0:
+                properties["colorBackground"] = "#000000"
+                properties["colorFirst"] = "#FFFFFF"
+                properties["colorSecond"] = "#CECECE"
+                properties["colorThird"] = "#8C8A8C"
+                properties["colorFourth"] = "#424542"
+                
+                // Arendelle Pink
+            case 2:
+                properties["colorBackground"] = "#000000"
+                properties["colorFirst"] = "#E60087"
+                properties["colorSecond"] = "#B800AD"
+                properties["colorThird"] = "#8E00D7"
+                properties["colorFourth"] = "#6600FF"
+                
+            default:
+                break
+            }
+            Files.createConfigFile(projectFolder.stringByAppendingPathComponent("project.config"), properties: properties)
+            
+            // create preview image
+            UIImagePNGRepresentation(createPreviewImage(Files.read(projectFolder.stringByAppendingPathComponent(properties["mainFunction"]!)))).writeToFile(projectFolder.stringByAppendingPathComponent(".preview.png"), atomically: true)
+            
+        }
         
     }
 

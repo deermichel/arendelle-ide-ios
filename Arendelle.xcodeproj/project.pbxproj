@@ -65,11 +65,13 @@
 		EC4BCBFB1A55D0F6002B340D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4BCBFA1A55D0F6002B340D /* AppDelegate.swift */; };
 		EC4BCBFD1A55D0F6002B340D /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4BCBFC1A55D0F6002B340D /* MasterViewController.swift */; };
 		EC4BCBFF1A55D0F6002B340D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4BCBFE1A55D0F6002B340D /* DetailViewController.swift */; };
-		EC4BCC021A55D0F6002B340D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC4BCC001A55D0F6002B340D /* Main.storyboard */; };
 		EC4BCC041A55D0F6002B340D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC4BCC031A55D0F6002B340D /* Images.xcassets */; };
-		EC4BCC071A55D0F6002B340D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC4BCC051A55D0F6002B340D /* LaunchScreen.xib */; };
 		EC4BCC131A55D0F6002B340D /* ArendelleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4BCC121A55D0F6002B340D /* ArendelleTests.swift */; };
 		EC67766E1ABB46B700BC50CC /* CoreInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC67766D1ABB46B700BC50CC /* CoreInterface.swift */; };
+		EC69AF6F1AC864E700F7FEC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC69AF6E1AC864E700F7FEC2 /* LaunchScreen.storyboard */; };
+		EC69AF741AC86B5100F7FEC2 /* example_10print.arendelle in Resources */ = {isa = PBXBuildFile; fileRef = EC69AF711AC86B5100F7FEC2 /* example_10print.arendelle */; };
+		EC69AF751AC86B5100F7FEC2 /* example_basic1.arendelle in Resources */ = {isa = PBXBuildFile; fileRef = EC69AF721AC86B5100F7FEC2 /* example_basic1.arendelle */; };
+		EC69AF761AC86B5100F7FEC2 /* example_qbert.arendelle in Resources */ = {isa = PBXBuildFile; fileRef = EC69AF731AC86B5100F7FEC2 /* example_qbert.arendelle */; };
 		EC77EB481A7AC369004D09B8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC77EB471A7AC369004D09B8 /* SettingsViewController.swift */; };
 		ECC6F08B1A55F07F007B701A /* Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC6F08A1A55F07F007B701A /* Files.swift */; };
 		ECCE3D121A9A42E10013E46F /* IonIcons.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCE3D0E1A9A42E10013E46F /* IonIcons.m */; };
@@ -182,11 +184,14 @@
 		EC4BCBFE1A55D0F6002B340D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EC4BCC011A55D0F6002B340D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC4BCC031A55D0F6002B340D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		EC4BCC061A55D0F6002B340D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		EC4BCC0C1A55D0F6002B340D /* ArendelleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArendelleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC4BCC111A55D0F6002B340D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC4BCC121A55D0F6002B340D /* ArendelleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArendelleTests.swift; sourceTree = "<group>"; };
 		EC67766D1ABB46B700BC50CC /* CoreInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreInterface.swift; sourceTree = "<group>"; };
+		EC69AF6E1AC864E700F7FEC2 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EC69AF711AC86B5100F7FEC2 /* example_10print.arendelle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = example_10print.arendelle; sourceTree = "<group>"; };
+		EC69AF721AC86B5100F7FEC2 /* example_basic1.arendelle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = example_basic1.arendelle; sourceTree = "<group>"; };
+		EC69AF731AC86B5100F7FEC2 /* example_qbert.arendelle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = example_qbert.arendelle; sourceTree = "<group>"; };
 		EC77EB471A7AC369004D09B8 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		ECC6F08A1A55F07F007B701A /* Files.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Files.swift; sourceTree = "<group>"; };
 		ECCE3D0C1A9A42E10013E46F /* ionicons-codes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ionicons-codes.h"; sourceTree = "<group>"; };
@@ -353,10 +358,12 @@
 		EC4BCBF71A55D0F6002B340D /* Arendelle */ = {
 			isa = PBXGroup;
 			children = (
+				EC69AF701AC86B5100F7FEC2 /* examples */,
+				EC0281771A99284400DFF45F /* htmls */,
 				ECCE3D0B1A9A42E10013E46F /* ionicons */,
 				EC24EBA41A8680E600599CC9 /* swifty */,
-				EC0281771A99284400DFF45F /* htmls */,
 				EC4BCBFA1A55D0F6002B340D /* AppDelegate.swift */,
+				ECC6F08A1A55F07F007B701A /* Files.swift */,
 				EC4BCBFE1A55D0F6002B340D /* DetailViewController.swift */,
 				ECD619311A97DBDA00BA3E6B /* ErrorsViewController.swift */,
 				ECD4572E1A65AC9600D738CE /* FilesViewController.swift */,
@@ -364,11 +371,10 @@
 				ECEF4DA01A70397C007E1E34 /* ScreenViewController.swift */,
 				EC77EB471A7AC369004D09B8 /* SettingsViewController.swift */,
 				EC0281561A9914D900DFF45F /* WebviewViewController.swift */,
-				ECC6F08A1A55F07F007B701A /* Files.swift */,
 				ECCE3D161A9A43560013E46F /* Arendelle-Bridging-Header.h */,
 				EC4BCC001A55D0F6002B340D /* Main.storyboard */,
 				EC4BCC031A55D0F6002B340D /* Images.xcassets */,
-				EC4BCC051A55D0F6002B340D /* LaunchScreen.xib */,
+				EC69AF6E1AC864E700F7FEC2 /* LaunchScreen.storyboard */,
 				EC4BCBF81A55D0F6002B340D /* Supporting Files */,
 			);
 			path = Arendelle;
@@ -397,6 +403,16 @@
 				EC4BCC111A55D0F6002B340D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EC69AF701AC86B5100F7FEC2 /* examples */ = {
+			isa = PBXGroup;
+			children = (
+				EC69AF711AC86B5100F7FEC2 /* example_10print.arendelle */,
+				EC69AF721AC86B5100F7FEC2 /* example_basic1.arendelle */,
+				EC69AF731AC86B5100F7FEC2 /* example_qbert.arendelle */,
+			);
+			path = examples;
 			sourceTree = "<group>";
 		};
 		ECCE3D0B1A9A42E10013E46F /* ionicons */ = {
@@ -496,15 +512,17 @@
 				EC0281841A99284400DFF45F /* about.html in Resources */,
 				EC02818E1A99284400DFF45F /* urld.png in Resources */,
 				EC02818F1A99284400DFF45F /* welcome.html in Resources */,
+				EC69AF741AC86B5100F7FEC2 /* example_10print.arendelle in Resources */,
+				EC69AF751AC86B5100F7FEC2 /* example_basic1.arendelle in Resources */,
+				EC69AF761AC86B5100F7FEC2 /* example_qbert.arendelle in Resources */,
 				EC0281851A99284400DFF45F /* done.png in Resources */,
 				EC0281891A99284400DFF45F /* qbert.png in Resources */,
 				EC02818D1A99284400DFF45F /* signs.png in Resources */,
-				EC4BCC021A55D0F6002B340D /* Main.storyboard in Resources */,
+				EC69AF6F1AC864E700F7FEC2 /* LaunchScreen.storyboard in Resources */,
 				ECCE3D141A9A42E10013E46F /* LICENSE in Resources */,
 				EC02818B1A99284400DFF45F /* read_the_book.png in Resources */,
 				EC02818C1A99284400DFF45F /* rprdpdplplp.png in Resources */,
 				ECCE3D131A9A42E10013E46F /* ionicons.ttf in Resources */,
-				EC4BCC071A55D0F6002B340D /* LaunchScreen.xib in Resources */,
 				EC02818A1A99284400DFF45F /* rand.png in Resources */,
 				EC0281861A99284400DFF45F /* glider.png in Resources */,
 				EC0281871A99284400DFF45F /* origin.png in Resources */,
@@ -607,14 +625,6 @@
 				EC4BCC011A55D0F6002B340D /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		EC4BCC051A55D0F6002B340D /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EC4BCC061A55D0F6002B340D /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
