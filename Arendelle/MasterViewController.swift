@@ -56,7 +56,7 @@ class MasterViewController: UITableViewController {
         // fill project list
         let fileManager = NSFileManager.defaultManager()
         let docsDir = Files.getDocsDir()
-        println(docsDir)
+        //println(docsDir)
         let filelist = fileManager.contentsOfDirectoryAtPath(docsDir, error: nil)
         let indexPath = NSIndexPath(forRow: 0, inSection: 0)
         for file in filelist! {
@@ -69,6 +69,34 @@ class MasterViewController: UITableViewController {
             }
         }
         
+        // if not touched so far -> setup book button footer
+        if prefs.boolForKey("hideBookButton") {
+            return
+        }
+        
+        // create preview image if necessary
+        let bookButtonPreview = Files.getDocsDir().stringByAppendingPathComponent(".bookButtonPreview.png")
+        if !NSFileManager.defaultManager().fileExistsAtPath(bookButtonPreview) {
+            UIImagePNGRepresentation(createPreviewImage("nn[ #i / 3 + 1 , [ 2 , prd ] [ 3 , pld ] [ 5 , u ] [ 4 , r ] nnn { #n = 3 , nnn } ] id [ #i / 2 - 7 , r ] [ 3 , [ 14 , cr ] [ 14 , l ] d ]")).writeToFile((bookButtonPreview), atomically: true)
+        }
+        
+        // add footer
+        let footer = tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell
+        footer.frame = CGRectMake(0, 0, 320, 100)
+        footer.textLabel!.text = "Learn Arendelle"
+        footer.backgroundColor = UIColor(patternImage: UIImage(contentsOfFile: bookButtonPreview)!)
+        let button = UIButton(frame: footer.frame)
+        button.opaque = true
+        button.addTarget(self, action: "bookButtonTapped:", forControlEvents: UIControlEvents.TouchUpInside)
+        footer.addSubview(button)
+        tableView.tableFooterView = footer
+        
+    }
+    
+    func bookButtonTapped(sender: AnyObject) {
+        let prefs = NSUserDefaults.standardUserDefaults()
+        prefs.setBool(true, forKey: "hideBookButton")
+        UIApplication.sharedApplication().openURL(NSURL(string: "http://web.arendelle.org/book")!)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -87,8 +115,6 @@ class MasterViewController: UITableViewController {
             presentViewController(view, animated: true, completion: nil)
             
         }
-        
-        
         
     }
 
