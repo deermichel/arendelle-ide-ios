@@ -20,6 +20,7 @@ class ScreenViewController: UIViewController {
     var showErrorsDialog = true
     var colorPalette: [UIColor] = []
     var evaluating = false
+    var errorDialogJustClosed = false
     
     // Arendelles screen
     var screen: codeScreen?
@@ -74,7 +75,11 @@ class ScreenViewController: UIViewController {
         gridHeight = Int(imageResult.frame.size.height) / cellHeight
         
         // reevaluate the code
-        evaluate()
+        if (!errorDialogJustClosed) {
+            evaluate()
+        } else {
+            errorDialogJustClosed = false
+        }
         
     }
     
@@ -270,8 +275,9 @@ class ScreenViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "showErrors" {
-                let controller = segue.destinationViewController as ErrorsViewController
-                controller.errors = screen!.errors
+            errorDialogJustClosed = true
+            let controller = segue.destinationViewController as ErrorsViewController
+            controller.errors = screen!.errors
         }
         
     }

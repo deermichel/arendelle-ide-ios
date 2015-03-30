@@ -56,7 +56,7 @@ class MasterViewController: UITableViewController {
         // fill project list
         let fileManager = NSFileManager.defaultManager()
         let docsDir = Files.getDocsDir()
-        //println(docsDir)
+        println(docsDir)
         let filelist = fileManager.contentsOfDirectoryAtPath(docsDir, error: nil)
         let indexPath = NSIndexPath(forRow: 0, inSection: 0)
         for file in filelist! {
@@ -70,7 +70,7 @@ class MasterViewController: UITableViewController {
         }
         
         // if not touched so far -> setup book button footer
-        if prefs.boolForKey("hideBookButton") {
+        if !prefs.boolForKey("hideBookButton") {
             return
         }
         
@@ -81,9 +81,14 @@ class MasterViewController: UITableViewController {
         }
         
         // add footer
-        let footer = tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell
-        footer.frame = CGRectMake(0, 0, 320, 100)
-        footer.textLabel!.text = "Learn Arendelle"
+        let footer = UIView(frame: CGRectMake(0, 0, self.view.bounds.size.width, 100))
+        let label = UILabel(frame: footer.frame)
+        footer.autoresizingMask = UIViewAutoresizing.FlexibleWidth
+        label.autoresizingMask = UIViewAutoresizing.FlexibleWidth
+        label.text = "Learn Arendelle"
+        label.font = UIFont.boldSystemFontOfSize(25)
+        label.textAlignment = NSTextAlignment.Center
+        footer.addSubview(label)
         footer.backgroundColor = UIColor(patternImage: UIImage(contentsOfFile: bookButtonPreview)!)
         let button = UIButton(frame: footer.frame)
         button.opaque = true
