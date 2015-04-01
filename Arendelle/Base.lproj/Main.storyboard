@@ -133,7 +133,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5CT-Ma-sdm" userLabel="Color Palette Picker">
+                            <pickerView tag="1" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5CT-Ma-sdm" userLabel="Color Palette Picker">
                                 <rect key="frame" x="16" y="284" width="568" height="162"/>
                             </pickerView>
                         </subviews>

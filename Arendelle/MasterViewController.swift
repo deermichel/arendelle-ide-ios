@@ -56,7 +56,7 @@ class MasterViewController: UITableViewController {
         // fill project list
         let fileManager = NSFileManager.defaultManager()
         let docsDir = Files.getDocsDir()
-        println(docsDir)
+        //println(docsDir)
         let filelist = fileManager.contentsOfDirectoryAtPath(docsDir, error: nil)
         let indexPath = NSIndexPath(forRow: 0, inSection: 0)
         for file in filelist! {
@@ -70,7 +70,7 @@ class MasterViewController: UITableViewController {
         }
         
         // if not touched so far -> setup book button footer
-        if !prefs.boolForKey("hideBookButton") {
+        if prefs.boolForKey("hideBookButton") {
             return
         }
         
@@ -160,7 +160,7 @@ class MasterViewController: UITableViewController {
         alert.addAction(UIAlertAction(title: "Rate Me", style: .Default, handler: { action in
             
             // rate app
-            UIApplication.sharedApplication().openURL(NSURL(string: "itms-apps://itunes.apple.com/app/idYOUR_APP_ID")!)
+            UIApplication.sharedApplication().openURL(NSURL(string: "itms-apps://itunes.apple.com/app/id962486181")!)
             return
             
         }))
