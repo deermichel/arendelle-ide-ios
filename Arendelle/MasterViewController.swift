@@ -60,7 +60,7 @@ class MasterViewController: UITableViewController {
         let filelist = fileManager.contentsOfDirectoryAtPath(docsDir, error: nil)
         let indexPath = NSIndexPath(forRow: 0, inSection: 0)
         for file in filelist! {
-            let name = file as String
+            let name = file as! String
             var isDir: ObjCBool = false
             fileManager.fileExistsAtPath(docsDir.stringByAppendingPathComponent(name), isDirectory: &isDir)
             if isDir && name[name.startIndex] != "." {
@@ -114,7 +114,7 @@ class MasterViewController: UITableViewController {
             
             // open welcome dialog
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let view = storyboard.instantiateViewControllerWithIdentifier("webView") as WebviewViewController
+            let view = storyboard.instantiateViewControllerWithIdentifier("webView") as! WebviewViewController
             view.title = "Welcome to Arendelle"
             view.html = "welcome"
             presentViewController(view, animated: true, completion: nil)
@@ -137,7 +137,7 @@ class MasterViewController: UITableViewController {
             
             // show welcome screen
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let view = storyboard.instantiateViewControllerWithIdentifier("webView") as WebviewViewController
+            let view = storyboard.instantiateViewControllerWithIdentifier("webView") as! WebviewViewController
             view.title = "Basics"
             view.html = "welcome"
             self.presentViewController(view, animated: true, completion: nil)
@@ -175,7 +175,7 @@ class MasterViewController: UITableViewController {
             
             // show about screen
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let view = storyboard.instantiateViewControllerWithIdentifier("webView") as WebviewViewController
+            let view = storyboard.instantiateViewControllerWithIdentifier("webView") as! WebviewViewController
             view.title = "About"
             view.html = "about"
             self.presentViewController(view, animated: true, completion: nil)
@@ -195,7 +195,7 @@ class MasterViewController: UITableViewController {
         var alert = UIAlertController(title: "New", message: "Enter a name to create a new Arendelle project.", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { action in
-            let textName = alert.textFields![0] as UITextField
+            let textName = alert.textFields![0] as! UITextField
             //let textMainFunctionName = alert.textFields![1] as UITextField
             
             // check input
@@ -224,7 +224,7 @@ class MasterViewController: UITableViewController {
             
             if let indexPath = self.tableView.indexPathForSelectedRow() {
                 let project = projectList[indexPath.row]
-                let controller = segue.destinationViewController as FilesViewController
+                let controller = segue.destinationViewController as! FilesViewController
                 controller.projectName = project
             }
             
@@ -244,7 +244,7 @@ class MasterViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
         let project = projectList[indexPath.row]
         cell.textLabel!.text = project
         if let preview = UIImage(contentsOfFile: Files.getDocsDir().stringByAppendingPathComponent(project).stringByAppendingPathComponent(".preview.png")) {
@@ -275,7 +275,7 @@ class MasterViewController: UITableViewController {
         var alert = UIAlertController(title: "Rename", message: "Enter a new name for the project.", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { action in
-            let textName = alert.textFields![0] as UITextField
+            let textName = alert.textFields![0] as! UITextField
             
             // check input
             if textName.text == "" {

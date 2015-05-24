@@ -65,7 +65,7 @@ func funcEval (#funcParts: FuncParts, inout #screen: codeScreen, inout #spaces: 
                         let match = funcParts.inputs[counter] =~ "[a-zA-Z0-9]+:"
                         if match.items.count == 1{
                             if funcParts.inputs[counter].hasPrefix(match.items[0]) {
-                                spaceExpr = funcParts.inputs[counter].substringFromIndex(match.items[0].utf16Count)
+                                spaceExpr = funcParts.inputs[counter].substringFromIndex(count(match.items[0].utf16))
         
                             }
                         }

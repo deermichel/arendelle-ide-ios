@@ -95,7 +95,7 @@ func spaceEval (#grammarParts: [String], inout #screen: codeScreen, inout #space
         
         var toBeStored = "\(number)".replace(" ", withString: "").replace(",", withString: ";")
         
-        let er = toBeStored[1...toBeStored.utf16Count-2].writeToURL(spaceURL, atomically: true, encoding: NSUTF8StringEncoding, error: nil)
+        let er = toBeStored[1...count(toBeStored.utf16)-2].writeToURL(spaceURL, atomically: true, encoding: NSUTF8StringEncoding, error: nil)
         
         if !er {
             report("Storing space '\(space).space' failed", &screen)

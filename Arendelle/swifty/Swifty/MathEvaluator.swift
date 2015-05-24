@@ -37,7 +37,7 @@ func mathEval (#stringExpression: String, inout #screen: codeScreen, inout #spac
         
         // checks to see if it's a condition we're running
         var itsNotCondition = true
-        for var i=0; i < mathExpression.utf16Count && itsNotCondition; i++ {
+        for var i=0; i < count(mathExpression.utf16) && itsNotCondition; i++ {
             let char:Character = mathExpression.PiIndex(i)
             if char == ">" || char == "<" || char == "=" { itsNotCondition = false }
         }

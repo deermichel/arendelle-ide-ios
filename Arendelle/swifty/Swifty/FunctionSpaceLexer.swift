@@ -63,7 +63,7 @@ func functionLexer (inout #arendelle: Arendelle, inout #screen: codeScreen) -> F
             part.append(charToRead)
             arendelle.i++
             
-            if arendelle.i == arendelle.code.utf16Count {
+            if arendelle.i == count(arendelle.code.utf16) {
                 report("Function name without parenthesis found", &screen)
                 return result
             }

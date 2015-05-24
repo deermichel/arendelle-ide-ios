@@ -64,7 +64,7 @@ class FilesViewController: UITableViewController {
             
             if let indexPath = self.tableView.indexPathForSelectedRow() {
                 let file = projectFolder.stringByAppendingPathComponent(fileList[indexPath.row].stringByReplacingOccurrencesOfString(".", withString: "/", options: .LiteralSearch, range: nil) + ".arendelle")
-                let controller = (segue.destinationViewController as UINavigationController).topViewController as DetailViewController
+                let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
                 controller.file = file
                 controller.projectFolder = projectFolder
                 controller.configFile = configFile
@@ -80,7 +80,7 @@ class FilesViewController: UITableViewController {
                 }
                 
             } else {
-                let controller = (segue.destinationViewController as UINavigationController).topViewController as DetailViewController
+                let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
                 controller.file = currentFunction
                 controller.projectFolder = projectFolder
                 controller.configFile = configFile
@@ -91,7 +91,7 @@ class FilesViewController: UITableViewController {
         } else if segue.identifier == "showSettings" {
             
             //let controller = (segue.destinationViewController as UINavigationController).topViewController as SettingsViewController
-            let controller = segue.destinationViewController as SettingsViewController
+            let controller = segue.destinationViewController as! SettingsViewController
             controller.projectFolder = projectFolder
             controller.configFile = configFile
             //controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
@@ -136,7 +136,7 @@ class FilesViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
         var icon = ion_ios_list_outline
         
         switch (indexPath.section) {
@@ -194,7 +194,7 @@ class FilesViewController: UITableViewController {
         var alert = UIAlertController(title: "Rename", message: "Enter a new name for the function.", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { action in
-            let textName = alert.textFields![0] as UITextField
+            let textName = alert.textFields![0] as! UITextField
             
             // check input
             if textName.text == "" {
@@ -243,7 +243,7 @@ class FilesViewController: UITableViewController {
         var alert = UIAlertController(title: "New", message: "Enter a name for the new function.", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { action in
-            let textName = alert.textFields![0] as UITextField
+            let textName = alert.textFields![0] as! UITextField
             self.newFunction(textName.text)
         }))
         alert.addTextFieldWithConfigurationHandler({(textField: UITextField!) in

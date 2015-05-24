@@ -20,8 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         self.window?.tintColor = UIColor(red: 230.0/255.0, green: 1.0/255.0, blue: 132.0/255.0, alpha: 1.0);
         
         // Override point for customization after application launch.
-        let splitViewController = self.window!.rootViewController as UISplitViewController
-        let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as UINavigationController
+        let splitViewController = self.window!.rootViewController as! UISplitViewController
+        let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
         navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()
         splitViewController.delegate = self
         splitViewController.preferredDisplayMode = UISplitViewControllerDisplayMode.PrimaryOverlay

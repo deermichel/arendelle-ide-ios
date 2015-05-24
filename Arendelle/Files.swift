@@ -15,7 +15,7 @@ class Files {
     class func getDocsDir() -> String {
         
         let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
-        let docsDir = dirPaths[0] as String
+        let docsDir = dirPaths[0] as! String
         
         return docsDir
     }
@@ -27,7 +27,7 @@ class Files {
         var data: NSData?
         data = fileManager.contentsAtPath(file)
         
-        return NSString(data: data!, encoding: NSUTF8StringEncoding)!
+        return NSString(data: data!, encoding: NSUTF8StringEncoding) as String!
     }
     
     // writes text to the given file
@@ -73,7 +73,7 @@ class Files {
         var files: [String] = []
         let filelist = fileManager.contentsOfDirectoryAtPath(folder, error: nil)
         for file in filelist! {
-            let name = file as String
+            let name = file as! String
             var isDir: ObjCBool = false
             fileManager.fileExistsAtPath(folder.stringByAppendingPathComponent(name), isDirectory: &isDir)
             if name[name.startIndex] != "." {

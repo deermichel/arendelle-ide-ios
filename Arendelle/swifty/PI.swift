@@ -88,7 +88,7 @@ struct RegexMatchCaptureGenerator : GeneratorType {
         items = items[1..<items.count]
         return ret
     }
-    var items: Slice<String>
+    var items: ArraySlice<String>
 }
 
 struct RegexMatchResult : SequenceType, BooleanType {
@@ -137,7 +137,7 @@ extension String
     
         if self.hasPrefix(text) {
         
-            return self[text.utf16Count...self.utf16Count - 1]
+            return self[count(text.utf16)...count(self.utf16) - 1]
         
         } else {
             return self
@@ -148,7 +148,7 @@ extension String
         
         if self.hasSuffix(text) {
             
-            return self[0...self.utf16Count - text.utf16Count - 1 ]
+            return self[0...count(self.utf16) - count(text.utf16) - 1 ]
             
         } else {
             return self
@@ -173,7 +173,7 @@ extension String
     /// Converts string to Int
     func characterAtIndex(index:Int) -> unichar
     {
-        return self.utf16[index]
+        return self.utf16[advance(self.utf16.startIndex, index)]
     }
     
     // String[Index] notation
@@ -214,7 +214,7 @@ extension String
                                 
         var result:NSMutableString = NSMutableString(string: self)
         result.replaceCharactersInRange(NSRange(range), withString: withString)
-        return result
+        return result as String
     }
     
     func replace(target: String, withString: String) -> String {

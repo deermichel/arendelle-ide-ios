@@ -24,7 +24,7 @@ struct Arendelle {
     
     //---------------------------------------
     func codeSize () -> Int {
-        return self.code.utf16Count
+        return count(self.code.utf16)
     }
     
     

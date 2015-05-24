@@ -47,7 +47,7 @@ func preprocessor (#codeToBeSpaceFixed: String, inout #screen: codeScreen) -> St
                 theCode.i++
                 var whileControl = true
                 
-                while theCode.i < theCode.code.utf16Count && whileControl {
+                while theCode.i < count(theCode.code.utf16) && whileControl {
                     
                     currentChar = tempArray[theCode.i]
                     
@@ -73,7 +73,7 @@ func preprocessor (#codeToBeSpaceFixed: String, inout #screen: codeScreen) -> St
                 theCode.i++
                 var whileControl = true
                 
-                while theCode.i < theCode.code.utf16Count && whileControl {
+                while theCode.i < count(theCode.code.utf16) && whileControl {
                     
                     currentChar = tempArray[theCode.i]
                     
@@ -81,7 +81,7 @@ func preprocessor (#codeToBeSpaceFixed: String, inout #screen: codeScreen) -> St
                         
                         theCode.i++
                         
-                        if theCode.i < theCode.code.utf16Count {
+                        if theCode.i < count(theCode.code.utf16) {
                             
                             currentChar = tempArray[theCode.i]
                             

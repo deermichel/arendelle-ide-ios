@@ -48,7 +48,7 @@ class DetailViewController: UIViewController {
         func getToolbarButtons() -> [UIBarButtonItem] {
             
             var buttons: [UIBarButtonItem] = []
-            var titles: [String] = ["[", ",", "]", "(", ")", "{", "}", "@", "#", "TAB", "/", "=", "-", "+", "*", "!", "?", "$", "&", "^", "%", "<", ">", "'", "\"", "\\"]
+            var titles: [String] = ["[", ",", "]", "(", ")", "{", "}", "@", "#", "TAB", "/", "=", "-", "+", "*", "!", "?", "$", "&", "^", "%", "<", ">", "'", "\"", "|"]
             
             for title in titles {
                 var button = UIBarButtonItem(title: title, style: .Plain, target: self, action: "toolbarKeyPressed:")
@@ -118,7 +118,7 @@ class DetailViewController: UIViewController {
     func keyboardWillShow(notification: NSNotification) {
         
         // get keyboard frame
-        let keyboardFrameValue = notification.userInfo![UIKeyboardFrameEndUserInfoKey] as NSValue
+        let keyboardFrameValue = notification.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
         let keyboardFrame = keyboardFrameValue.CGRectValue()
         
         // resize textview
@@ -154,7 +154,7 @@ class DetailViewController: UIViewController {
                 // save code
                 Files.write(file, text: textCode.text)
                 
-                let controller = segue.destinationViewController as ScreenViewController
+                let controller = segue.destinationViewController as! ScreenViewController
                 let mainFunction = projectFolder.stringByAppendingPathComponent(Files.parseConfigFile(configFile)["mainFunction"]!)
                 controller.code = Files.read(mainFunction)
                 controller.configFile = configFile

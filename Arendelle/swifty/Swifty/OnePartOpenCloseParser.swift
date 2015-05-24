@@ -55,7 +55,7 @@ func onePartOpenCloseParser (#openCloseCommand:Character, inout #spaces: [String
                 } else {
                     var errtext = ""
                     
-                    if result.utf16Count > 10 {
+                    if count(result.utf16) > 10 {
                         
                         
                         

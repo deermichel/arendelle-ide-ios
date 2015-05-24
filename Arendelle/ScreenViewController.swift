@@ -265,7 +265,7 @@ class ScreenViewController: UIViewController {
         
         let objectsToShare = [imageResult.image!]
         let activity = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-        activity.popoverPresentationController?.barButtonItem = sender as UIBarButtonItem
+        activity.popoverPresentationController?.barButtonItem = sender as! UIBarButtonItem
         self.presentViewController(activity, animated: true, completion: nil)
         
     }
@@ -276,7 +276,7 @@ class ScreenViewController: UIViewController {
         
         if segue.identifier == "showErrors" {
             errorDialogJustClosed = true
-            let controller = segue.destinationViewController as ErrorsViewController
+            let controller = segue.destinationViewController as! ErrorsViewController
             controller.errors = screen!.errors
         }
         

@@ -13,7 +13,7 @@ func timeDate () -> String {
     var calendar: NSCalendar = NSCalendar.currentCalendar()
     let now = NSDate()
     let seventies = NSDate(timeIntervalSince1970: 0)
-    let flags = NSCalendarUnit.DayCalendarUnit
+    let flags = NSCalendarUnit.CalendarUnitDay
     let components = calendar.components(flags, fromDate: now, toDate: seventies, options: nil)
     return "\(-components.day)"
 }
